@@ -1,0 +1,6 @@
+*
+!*.js
+!*.mjs
+!*.howto.*
+!rollup.config.js
+!tsconfig.json
