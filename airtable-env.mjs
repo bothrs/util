@@ -4,7 +4,8 @@ import {
   first as firstPure,
   select as selectPure,
   selectAll as selectAllPure,
-  update as updatePure
+  update as updatePure,
+  remove as removePure
 } from './airtable.mjs'
 
 export const env = {
@@ -35,4 +36,8 @@ export async function selectAll(tableName, filter, prepend) {
 
 export async function update(tableName, id, fields) {
   return updatePure(env, tableName, id, fields)
+}
+
+export async function remove(tableName, id, fields) {
+  return removePure(env, tableName, id, fields)
 }
