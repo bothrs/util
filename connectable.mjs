@@ -1,10 +1,11 @@
+import { writable } from 'svelte/store'
+
 // Reconnect after 1s, 3s, 6s, ...
 export function connectable(url) {
   const subs = []
   let timeout = 60000
   let ws
 
-  connect()
   function connect() {
     ws = new WebSocket(url)
     ws.onclose = () => setTimeout(connect, (timeout += 1000))
@@ -14,16 +15,17 @@ export function connectable(url) {
       receive(event)
       timeout = 1000
     }
+    return ws.close
   }
 
   function receive(event) {
-    subs.forEach(sub => sub(event.data))
+    set(event.data)
   }
 
+  const { set, subscribe } = writable(null, connect)
+
   return {
-    subscribe(handler) {
-      subs.push(handler)
-    },
+    subscribe,
     send(data) {
       if (ws && ws.readyState === ws.OPEN) {
         ws.send(data)
