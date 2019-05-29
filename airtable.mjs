@@ -59,7 +59,7 @@ export async function selectAll(env, tableName, filter, prepend = []) {
   }).then(r => r.json())
   const { offset, records } = body
   if (offset) {
-    return selectAll(tableName, { ...filter, offset }, prepend.concat(records))
+    return selectAll(env, tableName, { ...filter, offset }, prepend.concat(records))
   }
   if (records) {
     return prepend.concat(records).map(unpack)
