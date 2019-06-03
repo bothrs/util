@@ -34,6 +34,13 @@ export function postJSON(url, json, options) {
   return fetchJSON(url, options)
 }
 
+export function patchJSON(url, json, options) {
+  options = options || {}
+  options.json = json
+  options.method = 'PATCH'
+  return fetchJSON(url, options)
+}
+
 export function putJSON(url, json, options) {
   options = options || {}
   options.json = json
@@ -44,5 +51,23 @@ export function putJSON(url, json, options) {
 export function deleteJSON(url, json, options) {
   options = options || {}
   options.method = 'DELETE'
+  return fetchJSON(url, options)
+}
+
+// Method override
+
+export function _patchJSON(url, json, options) {
+  options = options || {}
+  options.json = json
+  options.method = 'POST'
+  url += (url.includes('?') ? '&' : '?') + '_method=PATCH'
+  return fetchJSON(url, options)
+}
+
+export function _putJSON(url, json, options) {
+  options = options || {}
+  options.json = json
+  options.method = 'PUT'
+  url += (url.includes('?') ? '&' : '?') + '_method=PUT'
   return fetchJSON(url, options)
 }
