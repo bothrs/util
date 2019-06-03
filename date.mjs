@@ -5,6 +5,9 @@ export function toLocaleJSON(date) {
   if (typeof date === 'string') {
     date = new Date(Date.parse(date))
   }
+  if (!date) {
+    return '?'
+  }
   const timezoneOffsetInHours = -(date.getTimezoneOffset() / 60)
   const sign = timezoneOffsetInHours >= 0 ? '+' : '-'
   const leadingZero = Math.abs(timezoneOffsetInHours) < 10 ? '0' : ''
