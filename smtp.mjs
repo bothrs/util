@@ -11,7 +11,7 @@
 export async function sendMail(message, env = process.env) {
   const nodemailer = require('nodemailer')
 
-  const testAccount = !env.MAIL_HOST && await nodemailer.createTestAccount()
+  const testAccount = !env.MAIL_HOST && (await nodemailer.createTestAccount())
 
   const transporter = nodemailer.createTransport({
     host: env.MAIL_HOST || 'smtp.ethereal.email',

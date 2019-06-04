@@ -1,8 +1,8 @@
-import * as fs from 'fs'
+import { readFile as _readFile, writeFile as _writeFile } from 'fs'
 
 export function readFile(fileName, type = 'utf8') {
   return new Promise((resolve, reject) => {
-    fs.readFile(fileName, type, (err, data) => {
+    _readFile(fileName, type, (err, data) => {
       err ? reject(err) : resolve(data)
     })
   })
@@ -10,7 +10,7 @@ export function readFile(fileName, type = 'utf8') {
 
 export function writeFile(fileName, data, type = 'utf8') {
   return new Promise((resolve, reject) => {
-    fs.writeFile(fileName, data, type, err => {
+    _writeFile(fileName, data, type, err => {
       err ? reject(err) : resolve(data)
     })
   })
@@ -18,7 +18,7 @@ export function writeFile(fileName, data, type = 'utf8') {
 
 export function readJSON(fileName) {
   return new Promise((resolve, reject) => {
-    fs.readFile(fileName, 'utf8', (err, data) => {
+    _readFile(fileName, 'utf8', (err, data) => {
       err ? reject(err) : resolve(JSON.parse(data))
     })
   })
@@ -26,7 +26,7 @@ export function readJSON(fileName) {
 
 export function writeJSON(fileName, data) {
   return new Promise((resolve, reject) => {
-    fs.writeFile(fileName, JSON.stringify(data), 'utf8', err => {
+    _writeFile(fileName, JSON.stringify(data), 'utf8', err => {
       err ? reject(err) : resolve(data)
     })
   })
