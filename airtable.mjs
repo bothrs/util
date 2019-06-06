@@ -1,4 +1,7 @@
+import { serialize } from './url.mjs'
 import fetch from 'node-fetch'
+
+export { serialize }
 
 export function app(app) {
   return 'https://api.airtable.com/v0/' + app + '/'
@@ -22,6 +25,9 @@ export async function create(env, tableName, fields) {
     headers: headers(env.key),
     body: JSON.stringify({ fields })
   }).then(r => r.json())
+  if (body.error) {
+    throw new Error(body.error)
+  }
   return unpack(body)
 }
 
@@ -110,26 +116,6 @@ export function unpack({ id: _id, fields, createdTime }) {
     },
     fields
   )
-}
-
-export function serialize(obj) {
-  const str = []
-  for (const p in obj) {
-    if (obj.hasOwnProperty(p) && obj[p]) {
-      str.push(encodeURIComponent(p) + '=' + encodeURIComponent(obj[p]))
-    }
-  }
-  return str.join('&')
-}
-
-function unserialize(str) {
-  const query = str[0] === '#' || str[0] === '?' ? str.slice(1) : str
-  const result = {}
-  query.split('&').forEach(part => {
-    const item = part.split('=')
-    result[decodeURIComponent(item[0])] = decodeURIComponent(item[1])
-  })
-  return result
 }
 
 // Filters

@@ -7,6 +7,14 @@ import {
   update as updatePure,
   remove as removePure
 } from './airtable.mjs'
+export {
+  byIds,
+  pack,
+  recordFilter,
+  serialize,
+  unpack,
+  where
+} from './airtable.mjs'
 
 export const env = {
   log: process.env.AIRTABLE_LOG ? console.log : null,
