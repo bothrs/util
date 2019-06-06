@@ -8,7 +8,7 @@
 export function memo(func, timeout) {
   const cache = {}
   const f = function(a, b, c) {
-    const key = JSON.stringify(a)
+    const key = JSON.stringify([a, b, c])
     if (!cache[key]) {
       const val = func(a, b, c)
       cache[key] = val
@@ -35,7 +35,7 @@ export function optimist(func, timeout = 60000) {
   const cache = {}
   const time = {}
   return (a, b, c) => {
-    const key = JSON.stringify(a)
+    const key = JSON.stringify([a, b, c])
     if (!cache[key]) {
       time[key] = Date.now() + timeout
       return (cache[key] = func(a, b, c))
