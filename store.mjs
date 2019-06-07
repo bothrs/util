@@ -5,7 +5,7 @@ import { ls } from './ls.mjs'
 
 export { readable, writable, get }
 
-export const neverP = new Promise(() => {})
+export const neverP = /*#__PURE__*/new Promise(() => {})
 export const emptyArray = []
 
 // export function loadableBasic(start, value) {

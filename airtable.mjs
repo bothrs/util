@@ -36,6 +36,9 @@ export async function find(env, tableName, id) {
   const body = await fetch(app(env.app) + tableName + '/' + id, {
     headers: headers(env.key)
   }).then(r => r.json())
+  if (body.error) {
+    throw new Error(body.error)
+  }
   return unpack(body)
 }
 
@@ -86,6 +89,9 @@ export async function update(env, tableName, id, fields) {
     headers: headers(env.key),
     body: JSON.stringify({ fields })
   }).then(r => r.json())
+  if (body.error) {
+    throw new Error(body.error)
+  }
   return unpack(body)
 }
 
@@ -95,6 +101,9 @@ export async function remove(env, tableName, id) {
     method: 'DELETE',
     headers: headers(env.key)
   }).then(r => r.json())
+  if (body.error) {
+    throw new Error(body.error)
+  }
   return unpack(body)
 }
 
