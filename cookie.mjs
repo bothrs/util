@@ -1,3 +1,5 @@
+import { writable } from 'svelte/store'
+
 // Browser only
 export function setCookie(c_name, value, exdays) {
   const exdate = new Date()
@@ -24,5 +26,17 @@ export function getCookie(c_name, doc) {
     if (x == c_name) {
       return unescape(y)
     }
+  }
+}
+
+// Browser only
+export function writableCookie(key, value, update) {
+  const { set, subscribe } = writable(getCookie(key) || value, update)
+  return {
+    set(v) {
+      set(v)
+      setCookie(key, v, 365)
+    },
+    subscribe
   }
 }
