@@ -1,5 +1,5 @@
-import { getJSON } from 'util/fetch'
-import { optimist } from 'util/memo'
+import { getJSON } from './fetch.mjs'
+import { optimist } from './memo.mjs'
 
 export const feed2json = optimist(get, 1e9)
 

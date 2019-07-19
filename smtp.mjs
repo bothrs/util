@@ -19,8 +19,8 @@ export async function sendMail(message, env = process.env) {
     secure: false, // true for 465, false for other ports
     auth: testAccount || {
       user: env.MAIL_USERNAME,
-      pass: env.MAIL_PASSWORD
-    }
+      pass: env.MAIL_PASSWORD,
+    },
   })
 
   if (!message.html && message.text) {
@@ -36,7 +36,7 @@ export async function sendMail(message, env = process.env) {
     to: message.to,
     subject: message.subject,
     text: message.text,
-    html: message.html
+    html: message.html,
   })
 
   if (testAccount) {

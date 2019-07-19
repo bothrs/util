@@ -33,7 +33,7 @@ export function connectable(url) {
       }
       console.error('Not open', ws)
       return false
-    }
+    },
   }
 }
 
@@ -41,6 +41,6 @@ export function connectableJSON(url) {
   const { subscribe, send } = connectable(url)
   return {
     subscribe: handler => subscribe(data => handler(data && JSON.parse(data))),
-    send: data => send(JSON.stringify(data))
+    send: data => send(JSON.stringify(data)),
   }
 }

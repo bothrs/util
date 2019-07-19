@@ -1,4 +1,4 @@
-import { writableLocal } from 'util/store'
+import { writableLocal } from './store.mjs'
 
 export const theme = writableLocal('theme', 'light')
 if (process.browser) {

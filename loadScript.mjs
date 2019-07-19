@@ -1,5 +1,5 @@
 const scripts = {}
-export default function loadScript(src, id) {
+export function loadScript(src, id) {
   if (id && scripts[id]) {
     return scripts[id]
   }
@@ -15,10 +15,19 @@ export default function loadScript(src, id) {
   }))
 }
 
+export default loadScript
+
 export function loadStyle(href) {
   const s = document.createElement('link')
   s.rel = 'stylesheet'
   s.crossOrigin = 'anonymous'
   s.href = href
   document.head.appendChild(s)
+}
+
+export function loadCSS(css) {
+  const style = document.createElement('style')
+  style.type = 'text/css'
+  style.appendChild(document.createTextNode(css))
+  document.head.appendChild(style)
 }

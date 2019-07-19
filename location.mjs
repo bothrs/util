@@ -11,7 +11,7 @@ export const location = writable(
       // Get first location as soon as possible
       navigator.geolocation.getCurrentPosition(setLocation, console.error, {
         maximumAge: Infinity,
-        enableHighAccuracy: false
+        enableHighAccuracy: false,
       })
       // Keep watching
       init = navigator.geolocation.watchPosition(setLocation)

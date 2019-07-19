@@ -1,7 +1,7 @@
 import { writable } from 'svelte/store'
-import loadScript from './loadScript.mjs'
+import { loadScript } from './loadScript.mjs'
 
-export const modal = /*#__PURE__*/writable()
+export const modal = /*#__PURE__*/ writable()
 
 export async function lockBody(elem) {
   if (elem) {

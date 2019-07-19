@@ -1,8 +1,8 @@
-import loadScript from './loadScript.mjs'
+import { loadScript } from './loadScript.mjs'
 
 const config = {
   customerKey: process.env.VOXEET_KEY,
-  customerSecret: process.env.VOXEET_SECRET
+  customerSecret: process.env.VOXEET_SECRET,
 }
 
 let loading = null

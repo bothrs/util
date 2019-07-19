@@ -37,6 +37,6 @@ export function writableCookie(key, value, update) {
       set(v)
       setCookie(key, v, 365)
     },
-    subscribe
+    subscribe,
   }
 }

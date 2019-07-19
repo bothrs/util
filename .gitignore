@@ -2,5 +2,7 @@
 !*.js
 !*.mjs
 !*.howto.*
+!*.prettierrc
+!package.json
 !rollup.config.js
 !tsconfig.json

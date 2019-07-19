@@ -5,7 +5,7 @@ import { ls } from './ls.mjs'
 
 export { readable, writable, get }
 
-export const neverP = /*#__PURE__*/new Promise(() => {})
+export const neverP = /*#__PURE__*/ new Promise(() => {})
 export const emptyArray = []
 
 // export function loadableBasic(start, value) {
@@ -119,7 +119,7 @@ export function loadable(db, table, filter, value = []) {
         const index = subscribers.indexOf(subscriber)
         if (index !== -1) subscribers.splice(index, 1)
       }
-    }
+    },
   }
 }
 
@@ -215,7 +215,7 @@ export function crudLocal(key) {
     Object.assign(
       existing,
       {
-        updatedAt: new Date().toJSON()
+        updatedAt: new Date().toJSON(),
       },
       data
     )
@@ -249,7 +249,7 @@ export function crudLocal(key) {
         const index = subscribers.indexOf(subscriber)
         if (index !== -1) subscribers.splice(index, 1)
       }
-    }
+    },
   }
 }
 
@@ -263,7 +263,7 @@ export function writableLocal(key, value, update) {
       set(v)
       setTimeout(() => ls(key, v), 16)
     },
-    subscribe
+    subscribe,
   }
 }
 

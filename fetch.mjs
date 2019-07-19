@@ -13,8 +13,8 @@ export function fetchJSON(url, options) {
         credentials: 'same-origin',
         headers: {
           accept: 'application/json',
-          'content-type': 'application/json'
-        }
+          'content-type': 'application/json',
+        },
       },
       options
     )

@@ -6,7 +6,7 @@ export const mailgun = {
     return new Promise((resolve, reject) => {
       const mailgunMessages = require('mailgun-js')({
         apiKey: process.env.MAILGUN_SECRET,
-        domain: process.env.MAILGUN_DOMAIN
+        domain: process.env.MAILGUN_DOMAIN,
       }).messages()
 
       console.log('mailgun.send', message.to)
@@ -20,5 +20,5 @@ export const mailgun = {
         }
       })
     })
-  }
+  },
 }

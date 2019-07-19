@@ -5,7 +5,7 @@ import {
   select as selectPure,
   selectAll as selectAllPure,
   update as updatePure,
-  remove as removePure
+  remove as removePure,
 } from './airtable.mjs'
 export {
   byIds,
@@ -13,13 +13,13 @@ export {
   recordFilter,
   serialize,
   unpack,
-  where
+  where,
 } from './airtable.mjs'
 
 export const env = {
   log: process.env.AIRTABLE_LOG ? console.log : null,
   app: process.env.AIRTABLE_APP,
-  key: process.env.AIRTABLE_API_KEY
+  key: process.env.AIRTABLE_API_KEY,
 }
 
 export async function create(tableName, fields) {
