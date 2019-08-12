@@ -2,6 +2,9 @@
 // https://polyfill.io/v3/polyfill.min.js?features=fetch,default
 
 export function fetchJSON(url, options) {
+  if (options.then) {
+    return options.then(opt => fetchJSON(url, opt))
+  }
   if (options.json) {
     options.body = JSON.stringify(options.json)
   }
@@ -11,17 +14,20 @@ export function fetchJSON(url, options) {
       {
         method: 'POST',
         credentials: 'same-origin',
-        headers: {
-          accept: 'application/json',
-          'content-type': 'application/json',
-        },
+        headers: Object.assign(
+          {
+            accept: 'application/json',
+            'content-type': 'application/json',
+          },
+          options.auth ? { Authorization: 'Bearer ' + options.auth } : {}
+        ),
       },
       options
     )
   ).then(r => r.json())
 }
 
-export function getJSON(url, json, options) {
+export function getJSON(url, options) {
   options = options || {}
   options.method = 'GET'
   return fetchJSON(url, options)
@@ -48,7 +54,7 @@ export function putJSON(url, json, options) {
   return fetchJSON(url, options)
 }
 
-export function deleteJSON(url, json, options) {
+export function deleteJSON(url, options) {
   options = options || {}
   options.method = 'DELETE'
   return fetchJSON(url, options)
