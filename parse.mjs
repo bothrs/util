@@ -1,4 +1,4 @@
-import loadScript from './loadScript.mjs'
+import { loadScript } from './loadScript.mjs'
 
 // Lazy parse
 let instance
@@ -23,7 +23,7 @@ export function initParse() {
     const client = new Parse.LiveQueryClient({
       applicationId: process.env.PARSE_APP_ID,
       serverURL: process.env.PARSE_LIVE_URL,
-      javascriptKey: process.env.PARSE_JS_KEY
+      javascriptKey: process.env.PARSE_JS_KEY,
     })
     client.open()
     return [Parse, client]
@@ -43,7 +43,7 @@ export function unpack(obj) {
     {
       _id,
       createdAt,
-      updatedAt
+      updatedAt,
     },
     attributes
   )

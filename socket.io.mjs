@@ -1,4 +1,4 @@
-import loadScript from './loadScript.mjs'
+import { loadScript } from './loadScript.mjs'
 
 // Lazy socket.io
 export let instance
