@@ -2,9 +2,6 @@
 // https://polyfill.io/v3/polyfill.min.js?features=fetch,default
 
 export function fetchJSON(url, options) {
-  if (options.then) {
-    return options.then(opt => fetchJSON(url, opt))
-  }
   if (options.json) {
     options.body = JSON.stringify(options.json)
   }
