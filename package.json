@@ -1,6 +1,6 @@
 {
   "name": "@bothrs/util",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "description": "Common helper functions",
   "license": "MIT",
   "scripts": {
@@ -11,7 +11,10 @@
     "prepare": "yarn fix",
     "prepublishOnly": "npm run build"
   },
-  "dependencies": {},
+  "dependencies": {
+    "dotenv": "^8.1.0",
+    "svelte": "^3.12.1"
+  },
   "devDependencies": {
     "prettier": "^1.18.2"
   },
