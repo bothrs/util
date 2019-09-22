@@ -11,10 +11,7 @@
     "prepare": "yarn fix",
     "prepublishOnly": "npm run build"
   },
-  "dependencies": {
-    "dotenv": "^8.1.0",
-    "svelte": "^3.12.1"
-  },
+  "dependencies": {},
   "devDependencies": {
     "prettier": "^1.18.2"
   },

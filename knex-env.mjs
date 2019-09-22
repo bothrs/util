@@ -1,3 +1,4 @@
-import { production } from './knexfile-env.js'
+import knexlib from 'knex'
+import { production } from './knexfile-env.mjs'
 
-export const knex = require('knex')(production)
+export const knex = knexlib(production)
