@@ -11,7 +11,7 @@
 const { parsed } = require('dotenv/lib/main').config()
 
 const config = {
-  client: parsed.DB_CONNECTION,
+  client: parsed.DB_CONNECTION || 'sqlite3',
   connection:
     parsed.DB_CONNECTION === 'mysql'
       ? {
