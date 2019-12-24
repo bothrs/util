@@ -1,6 +1,7 @@
 *
 !*.js
 !*.mjs
+!*.ts
 !*.howto.*
 !*.prettierrc
 !package.json

@@ -13,7 +13,11 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "prettier": "^1.18.2"
+    "prettier": "^1.18.2",
+    "rollup-plugin-multi-entry": "^2.1.0",
+    "rollup-plugin-typescript2": "^0.25.3",
+    "tslib": "^1.10.0",
+    "typescript": "^3.7.4"
   },
   "engines": {
     "node": ">=8"
