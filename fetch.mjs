@@ -14,8 +14,10 @@ export function fetchJSON(url, options) {
         headers: Object.assign(
           {
             accept: 'application/json',
-            'content-type': 'application/json',
           },
+          options.method !== 'GET'
+            ? { 'content-type': 'application/json' }
+            : {},
           options.auth ? { Authorization: 'Bearer ' + options.auth } : {}
         ),
       },

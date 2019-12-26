@@ -1,4 +1,4 @@
-export function fetchJSON(url: string, options: any) {
+export function fetchJSON(url: string, options?: any) {
   if (options.json) {
     options.body = JSON.stringify(options.json)
   }
@@ -11,8 +11,10 @@ export function fetchJSON(url: string, options: any) {
         headers: Object.assign(
           {
             accept: 'application/json',
-            'content-type': 'application/json',
           },
+          options.method !== 'GET'
+            ? { 'content-type': 'application/json' }
+            : {},
           options.auth ? { Authorization: 'Bearer ' + options.auth } : {}
         ),
       },
@@ -21,34 +23,34 @@ export function fetchJSON(url: string, options: any) {
   ).then(r => r.json())
 }
 
-export function getJSON(url: string, options: any) {
+export function getJSON(url: string, options?: any) {
   options = options || {}
   options.method = 'GET'
   return fetchJSON(url, options)
 }
 
-export function postJSON(url: string, json: any, options: any) {
+export function postJSON(url: string, json?: any, options?: any) {
   options = options || {}
   options.json = json
   options.method = 'POST'
   return fetchJSON(url, options)
 }
 
-export function patchJSON(url: string, json: any, options: any) {
+export function patchJSON(url: string, json?: any, options?: any) {
   options = options || {}
   options.json = json
   options.method = 'PATCH'
   return fetchJSON(url, options)
 }
 
-export function putJSON(url: string, json: any, options: any) {
+export function putJSON(url: string, json?: any, options?: any) {
   options = options || {}
   options.json = json
   options.method = 'PUT'
   return fetchJSON(url, options)
 }
 
-export function deleteJSON(url: string, options: any) {
+export function deleteJSON(url: string, options?: any) {
   options = options || {}
   options.method = 'DELETE'
   return fetchJSON(url, options)
@@ -56,7 +58,7 @@ export function deleteJSON(url: string, options: any) {
 
 // Method override
 
-export function _patchJSON(url: string, json: any, options: any) {
+export function _patchJSON(url: string, json?: any, options?: any) {
   options = options || {}
   options.json = json
   options.method = 'POST'
@@ -64,7 +66,7 @@ export function _patchJSON(url: string, json: any, options: any) {
   return fetchJSON(url, options)
 }
 
-export function _putJSON(url: string, json: any, options: any) {
+export function _putJSON(url: string, json?: any, options?: any) {
   options = options || {}
   options.json = json
   options.method = 'PUT'
