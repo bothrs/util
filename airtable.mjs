@@ -4,7 +4,7 @@ import fetch from 'node-fetch'
 export { serialize }
 
 export function app(app) {
-  return 'https://api.airtable.com/v0/' + app + '/'
+  return app.includes('/') ? app : 'https://api.airtable.com/v0/' + app + '/'
 }
 
 export function headers(key) {

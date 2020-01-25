@@ -14,7 +14,7 @@ export { byIds, pack, serialize, unpack, where } from './airtable'
 
 export const env: Environment = {
   log: process.env.AIRTABLE_LOG ? console.log : undefined,
-  app: process.env.AIRTABLE_APP,
+  app: process.env.AIRTABLE_APP || 'http://localhost:20011/',
   key: process.env.AIRTABLE_API_KEY,
 }
 

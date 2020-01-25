@@ -3,8 +3,8 @@ import fetch from 'node-fetch'
 
 export { serialize }
 
-export function app(app?: string) {
-  return 'https://api.airtable.com/v0/' + app + '/'
+export function app(app: string) {
+  return app.includes('/') ? app : 'https://api.airtable.com/v0/' + app + '/'
 }
 
 export function headers(key: any) {
@@ -174,7 +174,7 @@ export function where(field: string, value: any) {
 // TypeScript
 
 export interface Environment {
-  app?: string
+  app: string
   key?: string
   log?: Function
 }
