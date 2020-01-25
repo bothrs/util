@@ -30,7 +30,7 @@ export async function create(
     body: JSON.stringify({ fields }),
   }).then(r => r.json())
   if (body.error) {
-    throw new Error(body.error)
+    throw new Error(body.error.message)
   }
   return unpack(body)
 }
@@ -45,7 +45,7 @@ export async function find(
     headers: headers(env.key),
   }).then(r => r.json())
   if (body.error) {
-    throw new Error(body.error)
+    throw new Error(body.error.message)
   }
   return unpack(body)
 }
@@ -69,7 +69,10 @@ export async function select(
   const body = await fetch(app(env.app) + tableName + '?' + serialize(filter), {
     headers: headers(env.key),
   }).then(r => r.json())
-  const { records } = body
+  const { error, records } = body
+  if (error) {
+    throw new Error(error.message)
+  }
   if (records) {
     return records.map(unpack)
   }
@@ -87,7 +90,10 @@ export async function selectAll(
   const body = await fetch(app(env.app) + tableName + '?' + serialize(filter), {
     headers: headers(env.key),
   }).then(r => r.json())
-  const { offset, records } = body
+  const { error, offset, records } = body
+  if (error) {
+    throw new Error(error.message)
+  }
   if (offset) {
     return selectAll(
       env,
@@ -116,7 +122,7 @@ export async function update(
     body: JSON.stringify({ fields }),
   }).then(r => r.json())
   if (body.error) {
-    throw new Error(body.error)
+    throw new Error(body.error.message)
   }
   return unpack(body)
 }
@@ -132,7 +138,7 @@ export async function remove(
     headers: headers(env.key),
   }).then(r => r.json())
   if (body.error) {
-    throw new Error(body.error)
+    throw new Error(body.error.message)
   }
   return unpack(body)
 }

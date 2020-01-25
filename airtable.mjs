@@ -26,7 +26,7 @@ export async function create(env, tableName, fields) {
     body: JSON.stringify({ fields }),
   }).then(r => r.json())
   if (body.error) {
-    throw new Error(body.error)
+    throw new Error(body.error.message)
   }
   return unpack(body)
 }
@@ -37,7 +37,7 @@ export async function find(env, tableName, id) {
     headers: headers(env.key),
   }).then(r => r.json())
   if (body.error) {
-    throw new Error(body.error)
+    throw new Error(body.error.message)
   }
   return unpack(body)
 }
@@ -53,11 +53,13 @@ export async function select(env, tableName, filter) {
   const body = await fetch(app(env.app) + tableName + '?' + serialize(filter), {
     headers: headers(env.key),
   }).then(r => r.json())
-  const { records } = body
+  const { error, records } = body
+  if (error) {
+    throw new Error(error.message)
+  }
   if (records) {
     return records.map(unpack)
   }
-  console.error(body)
   return []
 }
 
@@ -66,7 +68,10 @@ export async function selectAll(env, tableName, filter, prepend = []) {
   const body = await fetch(app(env.app) + tableName + '?' + serialize(filter), {
     headers: headers(env.key),
   }).then(r => r.json())
-  const { offset, records } = body
+  const { error, offset, records } = body
+  if (error) {
+    throw new Error(error.message)
+  }
   if (offset) {
     return selectAll(
       env,
@@ -90,7 +95,7 @@ export async function update(env, tableName, id, fields) {
     body: JSON.stringify({ fields }),
   }).then(r => r.json())
   if (body.error) {
-    throw new Error(body.error)
+    throw new Error(body.error.message)
   }
   return unpack(body)
 }
@@ -101,8 +106,8 @@ export async function remove(env, tableName, id) {
     method: 'DELETE',
     headers: headers(env.key),
   }).then(r => r.json())
-  if (body.error) {
-    throw new Error(body.error)
+  if (body.error.message) {
+    throw new Error(body.error.message)
   }
   return unpack(body)
 }
