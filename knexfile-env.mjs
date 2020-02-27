@@ -10,7 +10,7 @@
 
 import * as dotenv from 'dotenv/lib/main.js'
 
-const { parsed } = dotenv.config()
+const parsed = Object.assign({}, process.env, dotenv.config().parsed)
 
 const config = {
   client: parsed.DB_CONNECTION || 'sqlite3',
