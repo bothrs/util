@@ -1,4 +1,4 @@
-export function id(len = 10) {
+export function id(len = 10): string {
   return Array.from(new Array(len))
     .map(() =>
       Math.random()
@@ -8,13 +8,13 @@ export function id(len = 10) {
     .join('')
 }
 
-export function str62(len = 10) {
+export function str62(len = 10): string {
   return Array.apply(null, Array(len))
     .map(char62)
     .join('')
 }
 
-export function str36(len = 10) {
+export function str36(len = 10): string {
   return Array.apply(null, Array(len))
     .map(() =>
       Math.random()

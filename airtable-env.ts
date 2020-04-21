@@ -31,22 +31,22 @@ export async function find(tableName: string, id: string): Promise<FieldSet> {
 
 export async function first(
   tableName: string,
-  filter: SelectOptions
+  filter: SelectOptions = {}
 ): Promise<FieldSet | null> {
   return firstPure(env, tableName, filter)
 }
 
 export async function select(
   tableName: string,
-  filter: SelectOptions
+  filter: SelectOptions = {}
 ): Promise<FieldSet[]> {
   return selectPure(env, tableName, filter)
 }
 
 export async function selectAll(
   tableName: string,
-  filter: SelectOptions,
-  prepend?: FieldSet[]
+  filter: SelectOptions = {},
+  prepend: FieldSet[] = []
 ): Promise<FieldSet[]> {
   return selectAllPure(env, tableName, filter, prepend)
 }
@@ -54,7 +54,7 @@ export async function selectAll(
 export async function update(
   tableName: string,
   id: string,
-  fields: SelectOptions
+  fields: FieldSet
 ): Promise<FieldSet> {
   return updatePure(env, tableName, id, fields)
 }

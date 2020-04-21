@@ -8,11 +8,15 @@
     "dev": "yarn lint",
     "fix": "prettier --write -l *.mjs",
     "lint": "prettier -l *.mjs",
+    "tsc": "tsc -w --noEmit",
     "prepare": "yarn fix",
     "prepublishOnly": "npm run build"
   },
   "dependencies": {},
   "devDependencies": {
+    "@types/node": "^13.11.1",
+    "@types/node-fetch": "^2.5.4",
+    "node-fetch": "^2.6.0",
     "prettier": "^1.18.2",
     "rollup-plugin-multi-entry": "^2.1.0",
     "rollup-plugin-typescript2": "^0.25.3",
@@ -42,7 +46,6 @@
     "bracketSpacing": true,
     "htmlWhitespaceSensitivity": "css",
     "jsxBracketSameLine": false,
-    "parser": "babel",
     "printWidth": 80,
     "proseWrap": "preserve",
     "quoteProps": "as-needed",

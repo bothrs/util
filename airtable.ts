@@ -53,7 +53,7 @@ export async function find(
 export async function first(
   env: Environment,
   tableName: string,
-  filter: SelectOptions
+  filter: SelectOptions = {}
 ): Promise<FieldSet | null> {
   env.log && env.log('first', tableName, filter)
   const items = await select(env, tableName, filter)
@@ -63,7 +63,7 @@ export async function first(
 export async function select(
   env: Environment,
   tableName: string,
-  filter: SelectOptions
+  filter: SelectOptions = {}
 ): Promise<FieldSet[]> {
   env.log && env.log('select', tableName, filter)
   const body = await fetch(app(env.app) + tableName + '?' + serialize(filter), {
@@ -83,7 +83,7 @@ export async function select(
 export async function selectAll(
   env: Environment,
   tableName: string,
-  filter: SelectOptions,
+  filter: SelectOptions = {},
   prepend: FieldSet[] = []
 ): Promise<FieldSet[]> {
   env.log && env.log('selectAll', tableName, filter, prepend.length)
@@ -191,7 +191,7 @@ export interface SelectOptions {
   maxRecords?: number
   pageSize?: number
   view?: string
-  offset: number
+  offset?: number
 }
 
 export interface FieldSet {

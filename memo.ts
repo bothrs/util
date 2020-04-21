@@ -1,13 +1,16 @@
 /**
  * Memoize function
  *
- * @param func - Expensive function
- * @param timeout - Milliseconds to wait before running the function again
- * @returns Function that returns optimistic value of `func`
+ * @param {Function} func - Expensive function
+ * @param {number} [timeout] - Milliseconds to wait before running the function again
+ * @returns {Function} Function that returns optimistic value of `func`
  */
-export function memo(func, timeout) {
+export function memo<T extends (...args: any[]) => any>(
+  func: T,
+  timeout?
+): (...funcArgs: Parameters<T>) => ReturnType<T> {
   const cache = {}
-  const f = function(a, b, c) {
+  const f = function(...[a, b, c]: Parameters<T>): ReturnType<T> {
     const key = JSON.stringify([a, b, c])
     if (!cache[key]) {
       const val = func(a, b, c)
@@ -28,14 +31,18 @@ export function memo(func, timeout) {
 /**
  * Runs functions optimistically
  *
- * @param func - Expensive function
- * @param timeout - Milliseconds to wait before running the function again
- * @returns Function that returns optimistic value of `func`
+ * @param {Function} func - Expensive function
+ * @param {number} [timeout] - Milliseconds to wait before running the function again
+ * @returns {Function} Function that returns optimistic value of `func`
  */
-export function optimist(func, timeout = 60000) {
+
+export function optimist<T extends (...args: any[]) => any>(
+  func: T,
+  timeout = 60000
+): (...funcArgs: Parameters<T>) => ReturnType<T> {
   const cache = {}
   const time = {}
-  const f = function(a, b, c) {
+  const f = function(...[a, b, c]: Parameters<T>): ReturnType<T> {
     const key = JSON.stringify([a, b, c])
     if (!cache[key]) {
       time[key] = Date.now() + timeout

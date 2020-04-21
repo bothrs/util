@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "noImplicitAny": false,
+    "noImplicitThis": true,
+    "noEmitOnError": true
+  },
+  "include": ["*.ts"],
+  "target": "esnext",
+  "module": "esnext",
+  "exclude": ["node_modules"]
+}
