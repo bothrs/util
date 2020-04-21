@@ -9,11 +9,5 @@ export function formatBytes(bytes) {
 export function euro(num, signed) {
   num = parseFloat(num || 0)
   const sign = num < 0 ? '- ' : signed ? '+ ' : ''
-  return (
-    sign +
-    '€ ' +
-    Math.abs(num)
-      .toFixed(2)
-      .replace('.', ',')
-  )
+  return sign + '€ ' + Math.abs(num).toFixed(2).replace('.', ',')
 }

@@ -85,8 +85,5 @@ export function isUrl(url) {
 // URL helper
 
 export function origin(url) {
-  return url
-    .split('/')
-    .slice(0, 3)
-    .join('/')
+  return url.split('/').slice(0, 3).join('/')
 }

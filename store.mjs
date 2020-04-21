@@ -115,7 +115,7 @@ export function loadable(db, table, filter, value = []) {
       subscribers.push(subscriber)
       run(value)
 
-      return function() {
+      return function () {
         const index = subscribers.indexOf(subscriber)
         if (index !== -1) subscribers.splice(index, 1)
       }
@@ -245,7 +245,7 @@ export function crudLocal(key) {
       subscribers.push(subscriber)
       run(value)
 
-      return function() {
+      return function () {
         const index = subscribers.indexOf(subscriber)
         if (index !== -1) subscribers.splice(index, 1)
       }

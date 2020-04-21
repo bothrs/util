@@ -1,26 +1,16 @@
 export function id(len = 10): string {
   return Array.from(new Array(len))
-    .map(() =>
-      Math.random()
-        .toString(36)
-        .charAt(5)
-    )
+    .map(() => Math.random().toString(36).charAt(5))
     .join('')
 }
 
 export function str62(len = 10): string {
-  return Array.apply(null, Array(len))
-    .map(char62)
-    .join('')
+  return Array.apply(null, Array(len)).map(char62).join('')
 }
 
 export function str36(len = 10): string {
   return Array.apply(null, Array(len))
-    .map(() =>
-      Math.random()
-        .toString(36)
-        .charAt(5)
-    )
+    .map(() => Math.random().toString(36).charAt(5))
     .join('')
 }
 

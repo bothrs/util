@@ -6,8 +6,8 @@
   "scripts": {
     "build": "yarn lint",
     "dev": "yarn lint",
-    "fix": "prettier --write -l *.mjs",
-    "lint": "prettier -l *.mjs",
+    "fix": "prettier --write -l *.mjs *.ts",
+    "lint": "prettier -l *.mjs *.ts",
     "tsc": "tsc -w --noEmit",
     "prepare": "yarn fix",
     "prepublishOnly": "npm run build"
@@ -17,7 +17,7 @@
     "@types/node": "^13.11.1",
     "@types/node-fetch": "^2.5.4",
     "node-fetch": "^2.6.0",
-    "prettier": "^1.18.2",
+    "prettier": "2",
     "rollup-plugin-multi-entry": "^2.1.0",
     "rollup-plugin-typescript2": "^0.25.3",
     "tslib": "^1.10.0",
@@ -43,16 +43,8 @@
   },
   "prettier": {
     "arrowParens": "avoid",
-    "bracketSpacing": true,
-    "htmlWhitespaceSensitivity": "css",
-    "jsxBracketSameLine": false,
-    "printWidth": 80,
-    "proseWrap": "preserve",
-    "quoteProps": "as-needed",
-    "requirePragma": false,
     "semi": false,
     "singleQuote": true,
-    "tabWidth": 2,
     "trailingComma": "es5"
   },
   "homepage": "https://github.com/thebothrs/util#readme"

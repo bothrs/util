@@ -10,7 +10,7 @@ export function memo<T extends (...args: any[]) => any>(
   timeout?
 ): (...funcArgs: Parameters<T>) => ReturnType<T> {
   const cache = {}
-  const f = function(...[a, b, c]: Parameters<T>): ReturnType<T> {
+  const f = function (...[a, b, c]: Parameters<T>): ReturnType<T> {
     const key = JSON.stringify([a, b, c])
     if (!cache[key]) {
       const val = func(a, b, c)
@@ -42,7 +42,7 @@ export function optimist<T extends (...args: any[]) => any>(
 ): (...funcArgs: Parameters<T>) => ReturnType<T> {
   const cache = {}
   const time = {}
-  const f = function(...[a, b, c]: Parameters<T>): ReturnType<T> {
+  const f = function (...[a, b, c]: Parameters<T>): ReturnType<T> {
     const key = JSON.stringify([a, b, c])
     if (!cache[key]) {
       time[key] = Date.now() + timeout
