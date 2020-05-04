@@ -23,7 +23,11 @@ export function fetchJSON(url, options) {
       },
       options
     )
-  ).then(r => r.json())
+  )
+    .then(r => r.json())
+    .catch(e => {
+      throw new Error('Failed to fetch JSON: ' + e.message)
+    })
 }
 
 export function getJSON(url, options) {
