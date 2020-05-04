@@ -8,7 +8,11 @@
 // DB_CONNECTION=sqlite3
 // DB_FILENAME=./.data/things.sqlite
 
-const parsed = Object.assign({}, process.env, require('dotenv/lib/main').config().parsed)
+const parsed = Object.assign(
+  {},
+  process.env,
+  require('dotenv/lib/main').config().parsed
+)
 
 const config = {
   client: parsed.DB_CONNECTION || 'sqlite3',

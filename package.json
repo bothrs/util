@@ -6,8 +6,8 @@
   "scripts": {
     "build": "yarn lint",
     "dev": "yarn lint",
-    "fix": "prettier --write -l *.mjs *.ts",
-    "lint": "prettier -l *.mjs *.ts",
+    "fix": "prettier --write -l *.js *.mjs *.ts",
+    "lint": "prettier -l *.js *.mjs *.ts",
     "tsc": "tsc -w --noEmit",
     "prepare": "yarn fix",
     "prepublishOnly": "npm run build"

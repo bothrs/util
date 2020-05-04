@@ -12,8 +12,8 @@ export async function getMetaData(link) {
   let data
   try {
     data = await getJSON('https://vimeo.com/api/oembed.json?url=' + link)
-  } catch(e) {
-    console.error('Error fetching metadata',link, e)
+  } catch (e) {
+    console.error('Error fetching metadata', link, e)
   }
   return data
 }
