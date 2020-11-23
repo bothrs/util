@@ -7,9 +7,9 @@
  */
 export function memo<T extends (...args: any[]) => any>(
   func: T,
-  timeout?
-): (...funcArgs: Parameters<T>) => ReturnType<T> {
-  const cache = {}
+  timeout = 0
+): (...args: Parameters<T>) => ReturnType<T> {
+  const cache: { [key: string]: ReturnType<T> | null } = {}
   const f = function (...[a, b, c]: Parameters<T>): ReturnType<T> {
     const key = JSON.stringify([a, b, c])
     if (!cache[key]) {
@@ -20,10 +20,12 @@ export function memo<T extends (...args: any[]) => any>(
           cache[key] = null
         }, timeout)
     }
-    return cache[key]
+    return cache[key] as ReturnType<T>
   }
   // TODO: expire this?
-  f.set = (key, value) => (cache[JSON.stringify(key)] = value)
+  f.set = (key: Parameters<T>, value: ReturnType<T>) =>
+    (cache[JSON.stringify(key)] = value)
+  // @ts-ignore
   f.reset = (a, b, c) => (cache[JSON.stringify([a, b, c])] = null)
   return f
 }
@@ -31,17 +33,16 @@ export function memo<T extends (...args: any[]) => any>(
 /**
  * Runs functions optimistically
  *
- * @param {Function} func - Expensive function
- * @param {number} [timeout] - Milliseconds to wait before running the function again
- * @returns {Function} Function that returns optimistic value of `func`
+ * @param func - Expensive function
+ * @param [timeout] - Milliseconds to wait before running the function again
+ * @returns Function that returns optimistic value of `func`
  */
-
 export function optimist<T extends (...args: any[]) => any>(
   func: T,
   timeout = 60000
-): (...funcArgs: Parameters<T>) => ReturnType<T> {
-  const cache = {}
-  const time = {}
+): (...args: Parameters<T>) => ReturnType<T> {
+  const cache: { [key: string]: ReturnType<T> | null } = {}
+  const time: { [key: string]: number } = {}
   const f = function (...[a, b, c]: Parameters<T>): ReturnType<T> {
     const key = JSON.stringify([a, b, c])
     if (!cache[key]) {
@@ -50,13 +51,19 @@ export function optimist<T extends (...args: any[]) => any>(
     }
     if (time[key] < Date.now()) {
       time[key] = Date.now() + timeout
-      Promise.resolve(func(a, b, c))
-        .then(val => (cache[key] = val))
-        .catch(() => console.log('optimist catch', a, b, c))
+      const promise = func(a, b, c)
+      Promise.resolve(promise)
+        .then(() => (cache[key] = promise))
+        .catch(e => {
+          console.log('optimist bg catch', e?.message || e)
+          console.log('optimist bg input', a, b, c)
+        })
     }
-    return cache[key]
+    return cache[key] as ReturnType<T>
   }
-  f.set = (key, value) => (cache[JSON.stringify(key)] = value)
+  f.set = ([a, b, c]: Parameters<T>, value: ReturnType<T>) =>
+    (cache[JSON.stringify([a, b, c])] = value)
+  // @ts-ignore
   f.reset = (a, b, c) => (cache[JSON.stringify([a, b, c])] = null)
   return f
 }

@@ -1,11 +1,12 @@
 // Usage:
 // items.filter(uniq)
-export function uniq(v: any, i: number, a: any[]) {
+export function uniq<T>(v: T, i: number, a: T[]) {
   return a.findIndex(b => b === v) === i
 }
 
 // Usage:
 // items.filter(uniqBy('id'))
-export function uniqBy(prop: string) {
-  return (v, i, a) => a.findIndex(v2 => v[prop] === v2[prop]) === i
+export function uniqBy<T>(prop: keyof T) {
+  return (v: T, i: number, a: T[]) =>
+    a.findIndex((v2: T) => v[prop] === v2[prop]) === i
 }

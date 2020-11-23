@@ -1,4 +1,10 @@
-export function ls(key: string, value?) {
+/**
+ * Store a value in localStorage
+ *
+ * @param key
+ * @param [value] - JSON-stringifyable value
+ */
+export function ls(key: string, value?: any) {
   try {
     if (typeof value === 'undefined') {
       return JSON.parse(window.localStorage[key] || 'null')

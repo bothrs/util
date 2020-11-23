@@ -6,7 +6,7 @@ export function download(url) {
     const { createWriteStream, unlink } = require('fs')
 
     const file = createWriteStream(path)
-    const request = get(url, response => {
+    get(url, response => {
       response.pipe(file)
       file.on('finish', () => {
         file.close((err, ok) => {

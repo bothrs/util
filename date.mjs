@@ -1,3 +1,5 @@
+// toJSON always returns the time in UTC timezone
+// toLocaleJSON returns in user timezone
 export function toLocaleJSON(date) {
   if (Array.isArray(date)) {
     date = date[0]

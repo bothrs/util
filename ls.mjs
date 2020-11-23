@@ -1,3 +1,9 @@
+/**
+ * Store a value in localStorage
+ *
+ * @param {string} key
+ * @param [value] - JSON-stringifyable value
+ */
 export function ls(key, value) {
   try {
     if (typeof value === 'undefined') {
