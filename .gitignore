@@ -1,5 +1,6 @@
 *
 !*.js
+!*.md
 !*.mjs
 !*.ts
 !*.howto.*
