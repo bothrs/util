@@ -1,6 +1,7 @@
 import { getJSON } from './fetch.mjs'
 import { optimist } from './memo.mjs'
 
+/** @deprecated Removed in v2 */
 export const feed2json = optimist(get, 1e9)
 
 function get(url) {

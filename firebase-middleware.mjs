@@ -1,5 +1,6 @@
 import config from 'config/firebase'
 
+/** @deprecated Removed in v2 */
 export default function firebaseJS(req, res, next) {
   if (req.url === '/__/firebase/init.js') {
     return res.end(`firebase.initializeApp(${JSON.stringify(config)})`)

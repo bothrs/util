@@ -2,6 +2,7 @@ import { loadScript } from './loadScript.mjs'
 
 // Lazy parse
 let instance
+/** @deprecated Removed in v2 */
 export function initParse() {
   if (!instance) {
     instance = init()
@@ -30,10 +31,12 @@ export function initParse() {
   }
 }
 
+/** @deprecated Removed in v2 */
 export function unpacker(callback) {
   return data => callback(unpack(data))
 }
 
+/** @deprecated Removed in v2 */
 export function unpack(obj) {
   if (Array.isArray(obj)) {
     return obj.map(unpack)
