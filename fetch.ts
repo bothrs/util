@@ -2,28 +2,17 @@ export function fetchJSON(url: string, options?: any) {
   if (options.json) {
     options.body = JSON.stringify(options.json)
   }
-  return fetch(
-    url,
-    Object.assign(
-      {
-        method: 'POST',
-        credentials: 'same-origin',
-      },
-      options,
-      {
-        headers: Object.assign(
-          {
-            accept: 'application/json',
-          },
-          options.method !== 'GET'
-            ? { 'content-type': 'application/json' }
-            : {},
-          options.auth ? { Authorization: 'Bearer ' + options.auth } : {},
-          options.headers
-        ),
-      }
-    )
-  )
+  return fetch(url, {
+    method: 'POST',
+    credentials: 'same-origin',
+    ...options,
+    headers: {
+      accept: 'application/json',
+      ...(options.method !== 'GET' && { 'content-type': 'application/json' }),
+      ...(options.auth ? { Authorization: 'Bearer ' + options.auth } : {}),
+      ...options.headers,
+    },
+  })
     .then(r => r.json())
     .catch(e => {
       throw new Error('Failed to fetch JSON: ' + e.message)

@@ -148,19 +148,17 @@ export async function remove(
 export function pack(fields: FieldSet) {
   return {
     id: fields._id,
-    fields: Object.assign(fields, { _id: null, createdTime: null }),
+    fields: { ...fields, _id: null, createdTime: null },
     createdTime: fields.createdTime,
   }
 }
 
 export function unpack({ id: _id, fields, createdTime }: FieldSet) {
-  return Object.assign(
-    {
-      _id,
-      createdTime,
-    },
-    fields
-  )
+  return {
+    _id,
+    createdTime,
+    ...fields,
+  }
 }
 
 // Filters
