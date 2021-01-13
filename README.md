@@ -78,7 +78,7 @@ Read and write from filesystem using promises.
 
 Hash shorthands
 
-`const hash = md5('test')` => Decode JWT
+`const hash = md5('test')`
 
 #### idle.mjs
 
