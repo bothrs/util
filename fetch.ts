@@ -8,6 +8,9 @@ export function fetchJSON(url: string, options?: any) {
       {
         method: 'POST',
         credentials: 'same-origin',
+      },
+      options,
+      {
         headers: Object.assign(
           {
             accept: 'application/json',
@@ -15,10 +18,10 @@ export function fetchJSON(url: string, options?: any) {
           options.method !== 'GET'
             ? { 'content-type': 'application/json' }
             : {},
-          options.auth ? { Authorization: 'Bearer ' + options.auth } : {}
+          options.auth ? { Authorization: 'Bearer ' + options.auth } : {},
+          options.headers
         ),
-      },
-      options
+      }
     )
   )
     .then(r => r.json())
