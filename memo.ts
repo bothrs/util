@@ -5,10 +5,7 @@
  * @param {number} [timeout] - Milliseconds to wait before running the function again
  * @returns {Function} Function that returns optimistic value of `func`
  */
-export function memo<T extends (...args: any[]) => any>(
-  func: T,
-  timeout = 0
-): (...args: Parameters<T>) => ReturnType<T> {
+export function memo<T extends (...args: any[]) => any>(func: T, timeout = 0) {
   const cache: { [key: string]: ReturnType<T> | null } = {}
   const f = function (...[a, b, c]: Parameters<T>): ReturnType<T> {
     const key = JSON.stringify([a, b, c])
@@ -25,8 +22,8 @@ export function memo<T extends (...args: any[]) => any>(
   // TODO: expire this?
   f.set = (key: Parameters<T>, value: ReturnType<T>) =>
     (cache[JSON.stringify(key)] = value)
-  // @ts-ignore
-  f.reset = (a, b, c) => (cache[JSON.stringify([a, b, c])] = null)
+  f.reset = (...[a, b, c]: Parameters<T>) =>
+    (cache[JSON.stringify([a, b, c])] = null)
   return f
 }
 
@@ -63,7 +60,7 @@ export function optimist<T extends (...args: any[]) => any>(
   }
   f.set = ([a, b, c]: Parameters<T>, value: ReturnType<T>) =>
     (cache[JSON.stringify([a, b, c])] = value)
-  // @ts-ignore
-  f.reset = (a, b, c) => (cache[JSON.stringify([a, b, c])] = null)
+  f.reset = (...[a, b, c]: Parameters<T>) =>
+    (cache[JSON.stringify([a, b, c])] = null)
   return f
 }
