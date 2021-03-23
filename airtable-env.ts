@@ -6,9 +6,11 @@ import {
   selectAll as selectAllPure,
   update as updatePure,
   remove as removePure,
-  FieldSet,
   Environment,
+  FieldSet,
+  Packed,
   SelectOptions,
+  Unpacked,
 } from './airtable'
 export { byIds, pack, serialize, unpack, where } from './airtable'
 
@@ -18,44 +20,47 @@ export const env: Environment = {
   key: process.env.AIRTABLE_API_KEY,
 }
 
-export async function create(
+export async function create<T extends FieldSet>(
   tableName: string,
-  fields: FieldSet
-): Promise<FieldSet> {
+  fields: T
+): Promise<Unpacked<T>> {
   return createPure(env, tableName, fields)
 }
 
-export async function find(tableName: string, id: string): Promise<FieldSet> {
+export async function find<T extends FieldSet>(
+  tableName: string,
+  id: string
+): Promise<Unpacked<T>> {
   return findPure(env, tableName, id)
 }
 
-export async function first(
+export async function first<T extends FieldSet>(
   tableName: string,
   filter: SelectOptions = {}
-): Promise<FieldSet | null> {
+): Promise<T | null> {
   return firstPure(env, tableName, filter)
 }
 
-export async function select(
+export async function select<T extends FieldSet>(
   tableName: string,
   filter: SelectOptions = {}
-): Promise<FieldSet[]> {
+): Promise<T[]> {
   return selectPure(env, tableName, filter)
 }
 
-export async function selectAll(
+export async function selectAll<T extends FieldSet>(
   tableName: string,
   filter: SelectOptions = {},
-  prepend: FieldSet[] = []
-): Promise<FieldSet[]> {
+  prepend: Packed<T>[] = []
+): Promise<T[]> {
   return selectAllPure(env, tableName, filter, prepend)
 }
 
-export async function update(
+export async function update<T extends FieldSet>(
   tableName: string,
   id: string,
-  fields: FieldSet
-): Promise<FieldSet> {
+  fields: T
+): Promise<Unpacked<T>> {
   return updatePure(env, tableName, id, fields)
 }
 
