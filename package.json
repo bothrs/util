@@ -1,6 +1,6 @@
 {
   "name": "@bothrs/util",
-  "version": "2.0.2-1",
+  "version": "2.0.2-2",
   "description": "Common helper functions",
   "license": "MIT",
   "scripts": {
@@ -12,7 +12,7 @@
     "prepare": "yarn fix",
     "prepublishOnly": "npm run build",
     "preversion": "yarn fix",
-    "postversion": "git push --tags && yarn publish . --tag $npm_package_version && git push && echo \"Successfully released version $npm_package_version!\""
+    "postversion": "echo $npm_package_version && sleep 3 && git push --tags && yarn publish . --tag $npm_package_version && git push && echo \"Successfully released version $npm_package_version!\""
   },
   "dependencies": {},
   "devDependencies": {
