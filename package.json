@@ -34,13 +34,13 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thebothrs/util.git"
+    "url": "git+https://github.com/bothrs/util.git"
   },
   "contributors": [
     "Thomas Ghysels <info@thomasg.be> (https://thomasg.be)"
   ],
   "bugs": {
-    "url": "https://github.com/thebothrs/util/issues"
+    "url": "https://github.com/bothrs/util/issues"
   },
   "prettier": {
     "arrowParens": "avoid",
@@ -48,5 +48,5 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "homepage": "https://github.com/thebothrs/util#readme"
+  "homepage": "https://github.com/bothrs/util#readme"
 }
