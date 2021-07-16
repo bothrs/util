@@ -183,6 +183,29 @@ export function where(field: string, value: any) {
 
 // TypeScript
 
+export interface AirtableRecord {
+  [key: string]: AirtableData
+}
+
+export type AirtableData = undefined | string | AirtableAttachment[]
+
+export interface AirtableAttachment {
+  url: string
+  thumbnails: AirtableThumbnails
+}
+
+export interface AirtableThumbnails {
+  small: AirtableThumbnail
+  large: AirtableThumbnail
+  full: AirtableThumbnail
+}
+
+export interface AirtableThumbnail {
+  url: string
+  width: number
+  height: number
+}
+
 export interface Environment {
   app: string
   key?: string
