@@ -28,7 +28,7 @@ export async function create<T extends FieldSet>(
     method: 'POST',
     headers: headers(env.key),
     body: JSON.stringify({ fields }),
-  }).then(r => r.json())
+  }).then((r: any) => r.json())
   if (body.error) {
     throw new Error(body.error.message)
   }
@@ -43,7 +43,7 @@ export async function find<T extends FieldSet>(
   env.log && env.log('find', tableName, id)
   const body = await fetch(app(env.app) + tableName + '/' + id, {
     headers: headers(env.key),
-  }).then(r => r.json())
+  }).then((r: any) => r.json())
   if (body.error) {
     throw new Error(body.error.message)
   }
@@ -68,7 +68,7 @@ export async function select<T extends FieldSet>(
   env.log && env.log('select', tableName, filter)
   const body = await fetch(app(env.app) + tableName + '?' + serialize(filter), {
     headers: headers(env.key),
-  }).then(r => r.json())
+  }).then((r: any) => r.json())
   const { error, records } = body
   if (error) {
     throw new Error(error.message)
@@ -89,7 +89,7 @@ export async function selectAll<T extends FieldSet>(
   env.log && env.log('selectAll', tableName, filter, prepend.length)
   const body = await fetch(app(env.app) + tableName + '?' + serialize(filter), {
     headers: headers(env.key),
-  }).then(r => r.json())
+  }).then((r: any) => r.json())
   const { error, offset, records } = body
   if (error) {
     throw new Error(error.message)
@@ -120,7 +120,7 @@ export async function update<T extends FieldSet>(
     method: 'PATCH',
     headers: headers(env.key),
     body: JSON.stringify({ fields }),
-  }).then(r => r.json())
+  }).then((r: any) => r.json())
   if (body.error) {
     throw new Error(body.error.message)
   }
@@ -136,7 +136,7 @@ export async function remove<T extends FieldSet>(
   const body = await fetch(app(env.app) + tableName + '/' + id, {
     method: 'DELETE',
     headers: headers(env.key),
-  }).then(r => r.json())
+  }).then((r: any) => r.json())
   if (body.error) {
     throw new Error(body.error.message)
   }
