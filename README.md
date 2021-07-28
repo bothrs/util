@@ -1,4 +1,6 @@
+
 ## util
+The following utils can be imported from `@bothrs/util/<utilname>`
 
 #### airtable-env
 
@@ -21,6 +23,17 @@ Manage Airtable data.
 #### fetch.mjs + ts
 
 Fetch JSON + shorthand for Authorization: Bearer
+
+Note: when using this on a node server, fetch needs to be polifilled
+node-fetch suggests doing this like:
+```javascript
+import fetch from 'node-fetch'
+
+if (!globalThis.fetch) {
+  //@ts-ignore
+  globalThis.fetch = fetch
+}
+```
 
 #### fs.mjs + ts
 
@@ -49,7 +62,9 @@ Manage URLs.
 `serialize({ example: 'ok' })` => Build a querystring
 
 ## mjs
-
+The mjs files contain code that could benefit from
+some triage;either refactored into `ts` files or removed.
+They can be found under `@bothrs/util/mjs`
 #### airtable-translation.mjs
 
 Download translations table from Airtable and write to file that can be imported.
