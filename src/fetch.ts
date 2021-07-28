@@ -1,8 +1,9 @@
 export function fetchJSON(url: string, options?: any) {
+  const _fetch = typeof fetch !== 'undefined' ? fetch : require('node-fetch')
   if (options.json) {
     options.body = JSON.stringify(options.json)
   }
-  return fetch(url, {
+  return _fetch(url, {
     method: 'POST',
     credentials: 'same-origin',
     ...options,
