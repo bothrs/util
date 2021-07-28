@@ -11,13 +11,15 @@
     "build": "npm run clean && tsc -d && cp src/*.mjs .",
     "prepare": "npm run fix",
     "prepublishOnly": "npm run build",
-    "preversion": "npm run fix"
+    "preversion": "npm run fix",
+    "docs": "documentation build src/** -f md --shallow"
   },
   "dependencies": {},
   "devDependencies": {
     "@tsconfig/recommended": "^1.0.1",
     "@types/node": "14",
     "@types/node-fetch": "2",
+    "documentation": "^13.2.5",
     "node-fetch": "^2.6.1",
     "prettier": "2",
     "rollup-plugin-multi-entry": "^2.1.0",

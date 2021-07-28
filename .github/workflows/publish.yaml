@@ -16,6 +16,7 @@ jobs:
         with:
           node-version: 14
       - run: yarn
+      - run: yarn docs
       - run: yarn build
       - name: 'Automated Version Bump'
         uses: 'phips28/gh-action-bump-version@v8.0.18'
