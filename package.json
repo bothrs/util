@@ -1,18 +1,17 @@
 {
   "name": "@bothrs/util",
-  "version": "2.0.4",
+  "version": "3.0.0-0",
   "description": "Common helper functions",
   "license": "MIT",
   "scripts": {
-    "dev": "yarn clean && tsc -w --noEmit",
-    "fix": "yarn clean && prettier --write -l src",
-    "lint": "yarn clean && prettier -l src",
+    "dev": "npm run clean && tsc -w --noEmit",
+    "fix": "npm run clean && prettier --write -l src",
+    "lint": "npm run clean && prettier -l src",
     "clean": "find . -maxdepth 1 -type f \\( -name \\*.mjs -or -name \\*.js -or -name \\*.d.ts -or -name \\*.jsx \\) -delete; date",
-    "build": "yarn clean && tsc -d && cp src/*.mjs .",
-    "prepare": "yarn fix",
+    "build": "npm run clean && tsc -d && cp src/*.mjs .",
+    "prepare": "npm run fix",
     "prepublishOnly": "npm run build",
-    "preversion": "yarn fix",
-    "postversion": "echo $npm_package_version && sleep 3 && npm publish --registry https://registry.npmjs.org && git push --tags && echo \"Successfully released version $npm_package_version!\""
+    "preversion": "npm run fix"
   },
   "dependencies": {},
   "devDependencies": {

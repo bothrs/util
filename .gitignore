@@ -1,10 +1,4 @@
-*
-!src
-!src/*
-!*.howto.*
-!*.prettierrc
-!package.json
-!yarn.lock
-!rollup.config.js
-!tslint.json
-!tsconfig.json
+node_modules
+.DS_Store
+
+notes
