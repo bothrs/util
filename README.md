@@ -1,10 +1,54 @@
 ## util
 
-#### airtable-env.mjs + ts
+#### airtable-env
 
 Manage Airtable data based on standard env variables.
 
 `await select('Blogposts')` => Load blogposts
+
+#### async.mjs + ts
+
+`await timeout(1000)` => Wait for 1 second  
+`const busy = await isPending(promise)` => Check if promise is pending  
+`const [error, data] = await to(promise)` => Unwrap promise
+
+#### airtable.mjs + ts
+
+Manage Airtable data.
+
+`await select({ app: '', key: '' }, 'Blogposts')` => Load blogposts
+
+#### fetch.mjs + ts
+
+Fetch JSON + shorthand for Authorization: Bearer
+
+#### fs.mjs + ts
+
+Read and write from filesystem using promises.
+
+#### ls.mjs + ts
+
+Minimal helper for localStorage
+
+#### memo.mjs + ts
+
+Optimize common requests.
+
+#### random.mjs + ts
+
+Generate random strings and UUIDs.
+
+#### uniq.mjs + ts
+
+Filter uniq items from an array.
+
+#### url.mjs + ts
+
+Manage URLs.
+
+`serialize({ example: 'ok' })` => Build a querystring
+
+## mjs
 
 #### airtable-translation.mjs
 
@@ -13,18 +57,6 @@ Download translations table from Airtable and write to file that can be imported
 #### airtable-translations.mjs
 
 Optimistically load translations table from Airtable.
-
-#### airtable.mjs + ts
-
-Manage Airtable data.
-
-`await select({ app: '', key: '' }, 'Blogposts')` => Load blogposts
-
-#### async.mjs + ts
-
-`await timeout(1000)` => Wait for 1 second  
-`const busy = await isPending(promise)` => Check if promise is pending  
-`const [error, data] = await to(promise)` => Unwrap promise
 
 #### cli.mjs
 
@@ -62,17 +94,9 @@ Manage dates
 
 Download files
 
-#### fetch.mjs + ts
-
-Fetch JSON + shorthand for Authorization: Bearer
-
 #### format.mjs
 
 Format strings
-
-#### fs.mjs + ts
-
-Read and write from filesystem using promises.
 
 #### hash.mjs
 
@@ -94,12 +118,6 @@ Load knex instance with config based on standard env variables.
 
 `import { knex } from 'knex-env'` => Ready to use knex instance
 
-#### knexfile-env.js
-
-Knex config for migrations.
-
-`require('.../util/knexfile-env.js')` => Save this as knexfile.js
-
 #### knexfile-env.mjs
 
 Knex config based on standard env variables.
@@ -120,10 +138,6 @@ Svelte store for location
 
 Stream logs to a file.
 
-#### ls.mjs + ts
-
-Minimal helper for localStorage
-
 #### mailgun.mjs
 
 Send mailgun messages.
@@ -135,10 +149,6 @@ Render basic markdown to HTML.
 #### math.mjs
 
 Functions with numbers
-
-#### memo.mjs + ts
-
-Optimize common requests.
 
 #### messenger.mjs
 
@@ -155,10 +165,6 @@ Svelte store for device orientation
 #### password.mjs
 
 Hash and verify passwords.
-
-#### random.mjs + ts
-
-Generate random strings and UUIDs.
 
 #### sample.mjs
 
@@ -192,19 +198,6 @@ Translation helpers
 
 Launch a Typeform widget.
 
-#### uniq.mjs + ts
-
-Filter uniq items from an array.
-
-#### url.mjs + ts
-
-Manage URLs.
-
-`serialize({ example: 'ok' })` => Build a querystring
-
-#### vimeo.js
-
-Launch a Vimeo video player.
 
 #### voxeet.mjs
 
