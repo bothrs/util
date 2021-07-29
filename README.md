@@ -1,11 +1,10 @@
 ## Introduction
 
-Here you can find a list of all the main utils being exported by this package,
+Here you can find a list of all the main utils being exported by this package.
 More in depth, generated, documentation can be found [here](docs.md)
+The following utils can be imported from `@bothrs/util/<utilname>`
 
 ## util
-
-The following utils can be imported from `@bothrs/util/<utilname>`
 
 #### airtable-env
 
@@ -71,7 +70,6 @@ Manage URLs.
 
 The mjs files contain code that could benefit from
 some triage;either refactored into `ts` files or removed.
-They can be found under `@bothrs/util/mjs`
 
 #### airtable-translation.mjs
 
