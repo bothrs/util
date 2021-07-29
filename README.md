@@ -29,7 +29,7 @@ Manage Airtable data.
 
 Fetch JSON + shorthand for Authorization: Bearer
 
-Note: when using this on a node server, fetch needs to be polifilled
+Note: when using this on a node server, fetch needs to be polyfilled
 node-fetch suggests doing this like:
 
 ```javascript
