@@ -1,3 +1,12 @@
+/**
+ * Manage Airtable data.
+ *
+ * Example:
+ *
+ * `await select({ app: '', key: '' }, 'Blogposts')` => Load blogposts
+ * @module
+ */
+
 import { serialize } from './url'
 import fetch from 'node-fetch'
 

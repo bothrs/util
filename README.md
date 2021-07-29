@@ -1,75 +1,16 @@
 ## Introduction
 
 Here you can find a list of all the main utils being exported by this package.
-More in depth, generated, documentation can be found on the [gh pages](https://bothrs.github.io/util/index.html).
-The following utils can be imported from `@bothrs/util/<utilname>`
+More in depth, generated, documentation can be found on the [gh pages](https://bothrs.github.io/util/).
 
-## util
+If you're reading this on the gh pages, use the sidebar on the right!
 
-#### airtable-env
-
-Manage Airtable data based on standard env variables.
-
-`await select('Blogposts')` => Load blogposts
-
-#### async.mjs + ts
-
-`await timeout(1000)` => Wait for 1 second  
-`const busy = await isPending(promise)` => Check if promise is pending  
-`const [error, data] = await to(promise)` => Unwrap promise
-
-#### airtable.mjs + ts
-
-Manage Airtable data.
-
-`await select({ app: '', key: '' }, 'Blogposts')` => Load blogposts
-
-#### fetch.mjs + ts
-
-Fetch JSON + shorthand for Authorization: Bearer
-
-Note: when using this on a node server, fetch needs to be polyfilled
-node-fetch suggests doing this like:
-
-```javascript
-import fetch from 'node-fetch'
-
-if (!globalThis.fetch) {
-  //@ts-ignore
-  globalThis.fetch = fetch
-}
-```
-
-#### fs.mjs + ts
-
-Read and write from filesystem using promises.
-
-#### ls.mjs + ts
-
-Minimal helper for localStorage
-
-#### memo.mjs + ts
-
-Optimize common requests.
-
-#### random.mjs + ts
-
-Generate random strings and UUIDs.
-
-#### uniq.mjs + ts
-
-Filter uniq items from an array.
-
-#### url.mjs + ts
-
-Manage URLs.
-
-`serialize({ example: 'ok' })` => Build a querystring
+All standard `typescript` modules can be found in the docs, but there are also a lot of mjs files that could be useful. Here's a list of available mjs modules:
 
 ## mjs
 
 The mjs files contain code that could benefit from
-some triage;either refactored into `ts` files or removed.
+some triage; either refactored into `ts` files or removed.
 
 #### airtable-translation.mjs
 

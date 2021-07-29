@@ -12,7 +12,7 @@
     "prepare": "npm run fix",
     "prepublishOnly": "npm run build",
     "preversion": "npm run fix",
-    "docs": "typedoc --out docs src"
+    "docs": "typedoc --out docs src --includeVersion"
   },
   "dependencies": {},
   "devDependencies": {

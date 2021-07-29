@@ -1,3 +1,20 @@
+/**
+ * Fetch JSON + shorthand for Authorization: Bearer
+ *
+ * Note: when using this on a node server, fetch needs to be polyfilled
+ * node-fetch suggests doing this like:
+ *
+ * ```typescript
+ * import fetch from 'node-fetch'
+ *
+ * if (!globalThis.fetch) {
+ *   //@ts-ignore
+ *   globalThis.fetch = fetch
+ * }
+ * ```
+ * @module
+ */
+
 export function fetchJSON(url: string, options?: any) {
   if (options.json) {
     options.body = JSON.stringify(options.json)

@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>@bothrs/util</title>
-	<meta name="description" content="Documentation for @bothrs/util">
+	<title>@bothrs/util - v3.0.4</title>
+	<meta name="description" content="Documentation for @bothrs/util - v3.0.4">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
 	<script async src="assets/js/search.js" id="search-script"></script>
@@ -23,7 +23,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="index.html" class="title">@bothrs/util</a>
+					<a href="index.html" class="title">@bothrs/util - v3.0.4</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -50,7 +50,7 @@
 	</div>
 	<div class="tsd-page-title">
 		<div class="container">
-			<h1>@bothrs/util</h1>
+			<h1>@bothrs/util - v3.0.4</h1>
 		</div>
 	</div>
 </header>
@@ -62,68 +62,14 @@
 					<h2>Introduction</h2>
 				</a>
 				<p>Here you can find a list of all the main utils being exported by this package.
-					More in depth, generated, documentation can be found on the <a href="https://bothrs.github.io/util/index.html">gh pages</a>.
-				The following utils can be imported from <code>@bothrs/util/&lt;utilname&gt;</code></p>
-				<a href="#util" id="util" style="color: inherit; text-decoration: none;">
-					<h2>util</h2>
-				</a>
-				<a href="#airtable-env" id="airtable-env" style="color: inherit; text-decoration: none;">
-					<h4>airtable-env</h4>
-				</a>
-				<p>Manage Airtable data based on standard env variables.</p>
-				<p><code>await select(&#39;Blogposts&#39;)</code> =&gt; Load blogposts</p>
-				<a href="#asyncmjs--ts" id="asyncmjs--ts" style="color: inherit; text-decoration: none;">
-					<h4>async.mjs + ts</h4>
-				</a>
-				<p><code>await timeout(1000)</code> =&gt; Wait for 1 second<br><code>const busy = await isPending(promise)</code> =&gt; Check if promise is pending<br><code>const [error, data] = await to(promise)</code> =&gt; Unwrap promise</p>
-				<a href="#airtablemjs--ts" id="airtablemjs--ts" style="color: inherit; text-decoration: none;">
-					<h4>airtable.mjs + ts</h4>
-				</a>
-				<p>Manage Airtable data.</p>
-				<p><code>await select({ app: &#39;&#39;, key: &#39;&#39; }, &#39;Blogposts&#39;)</code> =&gt; Load blogposts</p>
-				<a href="#fetchmjs--ts" id="fetchmjs--ts" style="color: inherit; text-decoration: none;">
-					<h4>fetch.mjs + ts</h4>
-				</a>
-				<p>Fetch JSON + shorthand for Authorization: Bearer</p>
-				<p>Note: when using this on a node server, fetch needs to be polyfilled
-				node-fetch suggests doing this like:</p>
-				<pre><code class="language-javascript"><span style="color: #AF00DB">import</span><span style="color: #000000"> </span><span style="color: #001080">fetch</span><span style="color: #000000"> </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;node-fetch&#039;</span>
-
-<span style="color: #AF00DB">if</span><span style="color: #000000"> (!</span><span style="color: #001080">globalThis</span><span style="color: #000000">.</span><span style="color: #001080">fetch</span><span style="color: #000000">) {</span>
-<span style="color: #000000">  </span><span style="color: #008000">//@ts-ignore</span>
-<span style="color: #000000">  </span><span style="color: #001080">globalThis</span><span style="color: #000000">.</span><span style="color: #001080">fetch</span><span style="color: #000000"> = </span><span style="color: #001080">fetch</span>
-<span style="color: #000000">}</span>
-</code></pre>
-				<a href="#fsmjs--ts" id="fsmjs--ts" style="color: inherit; text-decoration: none;">
-					<h4>fs.mjs + ts</h4>
-				</a>
-				<p>Read and write from filesystem using promises.</p>
-				<a href="#lsmjs--ts" id="lsmjs--ts" style="color: inherit; text-decoration: none;">
-					<h4>ls.mjs + ts</h4>
-				</a>
-				<p>Minimal helper for localStorage</p>
-				<a href="#memomjs--ts" id="memomjs--ts" style="color: inherit; text-decoration: none;">
-					<h4>memo.mjs + ts</h4>
-				</a>
-				<p>Optimize common requests.</p>
-				<a href="#randommjs--ts" id="randommjs--ts" style="color: inherit; text-decoration: none;">
-					<h4>random.mjs + ts</h4>
-				</a>
-				<p>Generate random strings and UUIDs.</p>
-				<a href="#uniqmjs--ts" id="uniqmjs--ts" style="color: inherit; text-decoration: none;">
-					<h4>uniq.mjs + ts</h4>
-				</a>
-				<p>Filter uniq items from an array.</p>
-				<a href="#urlmjs--ts" id="urlmjs--ts" style="color: inherit; text-decoration: none;">
-					<h4>url.mjs + ts</h4>
-				</a>
-				<p>Manage URLs.</p>
-				<p><code>serialize({ example: &#39;ok&#39; })</code> =&gt; Build a querystring</p>
+				More in depth, generated, documentation can be found on the <a href="https://bothrs.github.io/util/">gh pages</a>.</p>
+				<p>If you&#39;re reading this on the gh pages, use the sidebar on the right!</p>
+				<p>All standard <code>typescript</code> modules can be found in the docs, but there are also a lot of mjs files that could be useful. Here&#39;s a list of available mjs modules:</p>
 				<a href="#mjs" id="mjs" style="color: inherit; text-decoration: none;">
 					<h2>mjs</h2>
 				</a>
 				<p>The mjs files contain code that could benefit from
-				some triage;either refactored into <code>ts</code> files or removed.</p>
+				some triage; either refactored into <code>ts</code> files or removed.</p>
 				<a href="#airtable-translationmjs" id="airtable-translationmjs" style="color: inherit; text-decoration: none;">
 					<h4>airtable-translation.mjs</h4>
 				</a>

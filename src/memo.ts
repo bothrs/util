@@ -1,4 +1,9 @@
 /**
+ * Optimize common requests.
+ * @module
+ */
+
+/**
  * Memoize function
  *
  * @param {Function} func - Expensive function

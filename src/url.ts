@@ -1,3 +1,12 @@
+/**
+ * Manage URLs.
+ *
+ * Example:
+ *
+ * - `serialize({ example: 'ok' })` => Build a querystring
+ * @module
+ */
+
 export function serialize(obj: any) {
   const str: string[] = []
   for (const p in obj) {

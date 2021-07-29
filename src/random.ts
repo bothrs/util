@@ -1,3 +1,8 @@
+/**
+ * Generate random strings and UUIDs.
+ * @module
+ */
+
 export function id(len = 10): string {
   return Array.from(new Array(len))
     .map(() => Math.random().toString(36).charAt(5))

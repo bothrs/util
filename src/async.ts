@@ -1,3 +1,14 @@
+/**
+ * Async helpers
+ *
+ * Examples:
+ *
+ * - `await timeout(1000)` => Wait for 1 second
+ * - `const busy = await isPending(promise)` => Check if promise is pending
+ * - `const [error, data] = await to(promise)` => Unwrap promise
+ * @module
+ */
+
 export function timeout(ms: number): Promise<void> {
   return new Promise(resolve => setTimeout(resolve, ms))
 }

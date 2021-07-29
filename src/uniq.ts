@@ -1,3 +1,8 @@
+/**
+ * Filter uniq items from an array.
+ * @module
+ */
+
 // Usage:
 // items.filter(uniq)
 export function uniq<T>(v: T, i: number, a: T[]) {

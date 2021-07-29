@@ -1,3 +1,13 @@
+/**
+ *
+ * Manage Airtable data based on standard env variables.
+ *
+ * Example:
+ *
+ * `await select('Blogposts')` => Load blogposts
+ * @module
+ */
+
 import {
   create as createPure,
   find as findPure,

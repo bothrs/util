@@ -1,4 +1,10 @@
 /**
+ * Minimal helper for localStorage
+ *
+ * @module
+ */
+
+/**
  * Store a value in localStorage
  *
  * @param key

@@ -1,3 +1,8 @@
+/**
+ * Read and write from filesystem using promises.
+ * @module
+ */
+
 import { readFile as _readFile, writeFile as _writeFile } from 'fs'
 
 export function readFile(fileName: string, type = 'utf8'): Promise<string> {
