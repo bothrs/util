@@ -1,0 +1,359 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>@bothrs/util</title>
+	<meta name="description" content="Documentation for @bothrs/util">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<script async src="assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">@bothrs/util</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<h1>@bothrs/util</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<a href="#introduction" id="introduction" style="color: inherit; text-decoration: none;">
+					<h2>Introduction</h2>
+				</a>
+				<p>Here you can find a list of all the main utils being exported by this package.
+					More in depth, generated, documentation can be found on the gh pages.
+				The following utils can be imported from <code>@bothrs/util/&lt;utilname&gt;</code></p>
+				<a href="#util" id="util" style="color: inherit; text-decoration: none;">
+					<h2>util</h2>
+				</a>
+				<a href="#airtable-env" id="airtable-env" style="color: inherit; text-decoration: none;">
+					<h4>airtable-env</h4>
+				</a>
+				<p>Manage Airtable data based on standard env variables.</p>
+				<p><code>await select(&#39;Blogposts&#39;)</code> =&gt; Load blogposts</p>
+				<a href="#asyncmjs--ts" id="asyncmjs--ts" style="color: inherit; text-decoration: none;">
+					<h4>async.mjs + ts</h4>
+				</a>
+				<p><code>await timeout(1000)</code> =&gt; Wait for 1 second<br><code>const busy = await isPending(promise)</code> =&gt; Check if promise is pending<br><code>const [error, data] = await to(promise)</code> =&gt; Unwrap promise</p>
+				<a href="#airtablemjs--ts" id="airtablemjs--ts" style="color: inherit; text-decoration: none;">
+					<h4>airtable.mjs + ts</h4>
+				</a>
+				<p>Manage Airtable data.</p>
+				<p><code>await select({ app: &#39;&#39;, key: &#39;&#39; }, &#39;Blogposts&#39;)</code> =&gt; Load blogposts</p>
+				<a href="#fetchmjs--ts" id="fetchmjs--ts" style="color: inherit; text-decoration: none;">
+					<h4>fetch.mjs + ts</h4>
+				</a>
+				<p>Fetch JSON + shorthand for Authorization: Bearer</p>
+				<p>Note: when using this on a node server, fetch needs to be polyfilled
+				node-fetch suggests doing this like:</p>
+				<pre><code class="language-javascript"><span style="color: #AF00DB">import</span><span style="color: #000000"> </span><span style="color: #001080">fetch</span><span style="color: #000000"> </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;node-fetch&#039;</span>
+
+<span style="color: #AF00DB">if</span><span style="color: #000000"> (!</span><span style="color: #001080">globalThis</span><span style="color: #000000">.</span><span style="color: #001080">fetch</span><span style="color: #000000">) {</span>
+<span style="color: #000000">  </span><span style="color: #008000">//@ts-ignore</span>
+<span style="color: #000000">  </span><span style="color: #001080">globalThis</span><span style="color: #000000">.</span><span style="color: #001080">fetch</span><span style="color: #000000"> = </span><span style="color: #001080">fetch</span>
+<span style="color: #000000">}</span>
+</code></pre>
+				<a href="#fsmjs--ts" id="fsmjs--ts" style="color: inherit; text-decoration: none;">
+					<h4>fs.mjs + ts</h4>
+				</a>
+				<p>Read and write from filesystem using promises.</p>
+				<a href="#lsmjs--ts" id="lsmjs--ts" style="color: inherit; text-decoration: none;">
+					<h4>ls.mjs + ts</h4>
+				</a>
+				<p>Minimal helper for localStorage</p>
+				<a href="#memomjs--ts" id="memomjs--ts" style="color: inherit; text-decoration: none;">
+					<h4>memo.mjs + ts</h4>
+				</a>
+				<p>Optimize common requests.</p>
+				<a href="#randommjs--ts" id="randommjs--ts" style="color: inherit; text-decoration: none;">
+					<h4>random.mjs + ts</h4>
+				</a>
+				<p>Generate random strings and UUIDs.</p>
+				<a href="#uniqmjs--ts" id="uniqmjs--ts" style="color: inherit; text-decoration: none;">
+					<h4>uniq.mjs + ts</h4>
+				</a>
+				<p>Filter uniq items from an array.</p>
+				<a href="#urlmjs--ts" id="urlmjs--ts" style="color: inherit; text-decoration: none;">
+					<h4>url.mjs + ts</h4>
+				</a>
+				<p>Manage URLs.</p>
+				<p><code>serialize({ example: &#39;ok&#39; })</code> =&gt; Build a querystring</p>
+				<a href="#mjs" id="mjs" style="color: inherit; text-decoration: none;">
+					<h2>mjs</h2>
+				</a>
+				<p>The mjs files contain code that could benefit from
+				some triage;either refactored into <code>ts</code> files or removed.</p>
+				<a href="#airtable-translationmjs" id="airtable-translationmjs" style="color: inherit; text-decoration: none;">
+					<h4>airtable-translation.mjs</h4>
+				</a>
+				<p>Download translations table from Airtable and write to file that can be imported.</p>
+				<a href="#airtable-translationsmjs" id="airtable-translationsmjs" style="color: inherit; text-decoration: none;">
+					<h4>airtable-translations.mjs</h4>
+				</a>
+				<p>Optimistically load translations table from Airtable.</p>
+				<a href="#climjs" id="climjs" style="color: inherit; text-decoration: none;">
+					<h4>cli.mjs</h4>
+				</a>
+				<p>Manage command line.</p>
+				<p><code>console.log(green(&#39;Success&#39;))</code> =&gt; Log &quot;success&quot; in green</p>
+				<a href="#cloudimgmjs" id="cloudimgmjs" style="color: inherit; text-decoration: none;">
+					<h4>cloudimg.mjs</h4>
+				</a>
+				<p>Demo CDN integration</p>
+				<a href="#colormjs" id="colormjs" style="color: inherit; text-decoration: none;">
+					<h4>color.mjs</h4>
+				</a>
+				<p>Command line colors</p>
+				<p><code>console.log(green(&#39;Success&#39;))</code> =&gt; Log &quot;success&quot; in green</p>
+				<a href="#connectablemjs" id="connectablemjs" style="color: inherit; text-decoration: none;">
+					<h4>connectable.mjs</h4>
+				</a>
+				<p>Svelte store for reconnecting websocket.</p>
+				<a href="#cookiemjs" id="cookiemjs" style="color: inherit; text-decoration: none;">
+					<h4>cookie.mjs</h4>
+				</a>
+				<p>Read and write cookies.</p>
+				<a href="#copytoclipboardmjs" id="copytoclipboardmjs" style="color: inherit; text-decoration: none;">
+					<h4>copyToClipboard.mjs</h4>
+				</a>
+				<p>Copy to clipboard</p>
+				<a href="#datemjs" id="datemjs" style="color: inherit; text-decoration: none;">
+					<h4>date.mjs</h4>
+				</a>
+				<p>Manage dates</p>
+				<a href="#downloadmjs" id="downloadmjs" style="color: inherit; text-decoration: none;">
+					<h4>download.mjs</h4>
+				</a>
+				<p>Download files</p>
+				<a href="#formatmjs" id="formatmjs" style="color: inherit; text-decoration: none;">
+					<h4>format.mjs</h4>
+				</a>
+				<p>Format strings</p>
+				<a href="#hashmjs" id="hashmjs" style="color: inherit; text-decoration: none;">
+					<h4>hash.mjs</h4>
+				</a>
+				<p>Hash shorthands</p>
+				<p><code>const hash = md5(&#39;test&#39;)</code></p>
+				<a href="#idlemjs" id="idlemjs" style="color: inherit; text-decoration: none;">
+					<h4>idle.mjs</h4>
+				</a>
+				<p>Svelte store for user inactivity</p>
+				<a href="#jwtmjs" id="jwtmjs" style="color: inherit; text-decoration: none;">
+					<h4>jwt.mjs</h4>
+				</a>
+				<p><code>const { sub } = unsafeDecode(&#39;eY...&#39;)</code> =&gt; Decode JWT</p>
+				<a href="#knex-envmjs" id="knex-envmjs" style="color: inherit; text-decoration: none;">
+					<h4>knex-env.mjs</h4>
+				</a>
+				<p>Load knex instance with config based on standard env variables.</p>
+				<p><code>import { knex } from &#39;knex-env&#39;</code> =&gt; Ready to use knex instance</p>
+				<a href="#knexfile-envmjs" id="knexfile-envmjs" style="color: inherit; text-decoration: none;">
+					<h4>knexfile-env.mjs</h4>
+				</a>
+				<p>Knex config based on standard env variables.</p>
+				<a href="#leafletmjs" id="leafletmjs" style="color: inherit; text-decoration: none;">
+					<h4>leaflet.mjs</h4>
+				</a>
+				<p>Load leaflet JS and CSS.</p>
+				<a href="#loadscriptmjs" id="loadscriptmjs" style="color: inherit; text-decoration: none;">
+					<h4>loadScript.mjs</h4>
+				</a>
+				<p>Load scripts, stylesheets and CSS.</p>
+				<a href="#locationmjs" id="locationmjs" style="color: inherit; text-decoration: none;">
+					<h4>location.mjs</h4>
+				</a>
+				<p>Svelte store for location</p>
+				<a href="#logmjs" id="logmjs" style="color: inherit; text-decoration: none;">
+					<h4>log.mjs</h4>
+				</a>
+				<p>Stream logs to a file.</p>
+				<a href="#mailgunmjs" id="mailgunmjs" style="color: inherit; text-decoration: none;">
+					<h4>mailgun.mjs</h4>
+				</a>
+				<p>Send mailgun messages.</p>
+				<a href="#markdownmjs" id="markdownmjs" style="color: inherit; text-decoration: none;">
+					<h4>markdown.mjs</h4>
+				</a>
+				<p>Render basic markdown to HTML.</p>
+				<a href="#mathmjs" id="mathmjs" style="color: inherit; text-decoration: none;">
+					<h4>math.mjs</h4>
+				</a>
+				<p>Functions with numbers</p>
+				<a href="#messengermjs" id="messengermjs" style="color: inherit; text-decoration: none;">
+					<h4>messenger.mjs</h4>
+				</a>
+				<p>Load Messenger SDK.</p>
+				<a href="#modalmjs" id="modalmjs" style="color: inherit; text-decoration: none;">
+					<h4>modal.mjs</h4>
+				</a>
+				<p>Disable scroll behind modals.</p>
+				<a href="#orientationmjs" id="orientationmjs" style="color: inherit; text-decoration: none;">
+					<h4>orientation.mjs</h4>
+				</a>
+				<p>Svelte store for device orientation</p>
+				<a href="#passwordmjs" id="passwordmjs" style="color: inherit; text-decoration: none;">
+					<h4>password.mjs</h4>
+				</a>
+				<p>Hash and verify passwords.</p>
+				<a href="#samplemjs" id="samplemjs" style="color: inherit; text-decoration: none;">
+					<h4>sample.mjs</h4>
+				</a>
+				<p>Get a random element from an array.</p>
+				<a href="#sentry-envmjs" id="sentry-envmjs" style="color: inherit; text-decoration: none;">
+					<h4>sentry-env.mjs</h4>
+				</a>
+				<p>Initialize Sentry based on standard env variables.</p>
+				<a href="#smtpmjs" id="smtpmjs" style="color: inherit; text-decoration: none;">
+					<h4>smtp.mjs</h4>
+				</a>
+				<p>Send emails with nodemailer based on standard env variables.</p>
+				<a href="#socketiomjs" id="socketiomjs" style="color: inherit; text-decoration: none;">
+					<h4>socket.io.mjs</h4>
+				</a>
+				<p>Connect to a socket.io server.</p>
+				<a href="#storemjs" id="storemjs" style="color: inherit; text-decoration: none;">
+					<h4>store.mjs</h4>
+				</a>
+				<p>Svelte store helpers</p>
+				<a href="#thememjs" id="thememjs" style="color: inherit; text-decoration: none;">
+					<h4>theme.mjs</h4>
+				</a>
+				<p>Svelte store for light/dark theme</p>
+				<a href="#translatemjs" id="translatemjs" style="color: inherit; text-decoration: none;">
+					<h4>translate.mjs</h4>
+				</a>
+				<p>Translation helpers</p>
+				<a href="#typeformmjs" id="typeformmjs" style="color: inherit; text-decoration: none;">
+					<h4>typeform.mjs</h4>
+				</a>
+				<p>Launch a Typeform widget.</p>
+				<a href="#voxeetmjs" id="voxeetmjs" style="color: inherit; text-decoration: none;">
+					<h4>voxeet.mjs</h4>
+				</a>
+				<p>Load the Voxeet SDK.</p>
+				<a href="#xssmjs" id="xssmjs" style="color: inherit; text-decoration: none;">
+					<h4>xss.mjs</h4>
+				</a>
+				<p>Helpers to protect against XSS</p>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="modules.html">Modules</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/airtable.html">airtable</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/airtable_env.html">airtable-<wbr>env</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/async.html">async</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/fetch.html">fetch</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/fs.html">fs</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/hash.html">hash</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/jwt.html">jwt</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/load.html">load</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/ls.html">ls</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/memo.html">memo</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/random.html">random</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/uniq.html">uniq</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/url.html">url</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
