@@ -12,7 +12,7 @@
     "prepare": "npm run fix",
     "prepublishOnly": "npm run build",
     "preversion": "npm run fix",
-    "docs": "documentation build src/** -f md --shallow"
+    "docs": "typedoc --out docs src"
   },
   "dependencies": {},
   "devDependencies": {
@@ -24,6 +24,7 @@
     "prettier": "2",
     "rollup-plugin-multi-entry": "^2.1.0",
     "rollup-plugin-typescript2": "^0.30.0",
+    "typedoc": "^0.21.4",
     "typescript": "4"
   },
   "peerDependencies": {

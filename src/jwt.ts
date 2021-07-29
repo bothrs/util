@@ -1,4 +1,6 @@
-/** Decode base64 in browser and node.js */
+/**
+ * Decode base64 in browser and node.js
+ * */
 export const atob =
   typeof window !== 'undefined'
     ? window.atob
