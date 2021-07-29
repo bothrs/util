@@ -1,7 +1,7 @@
 ## Introduction
 
 Here you can find a list of all the main utils being exported by this package.
-More in depth, generated, documentation can be found on the gh pages.
+More in depth, generated, documentation can be found on the [gh pages](https://bothrs.github.io/util/index.html).
 The following utils can be imported from `@bothrs/util/<utilname>`
 
 ## util
