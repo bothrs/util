@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>fs | @bothrs/util - v3.0.4</title>
-	<meta name="description" content="Documentation for @bothrs/util - v3.0.4">
+	<title>fs | @bothrs/util - v3.0.5</title>
+	<meta name="description" content="Documentation for @bothrs/util - v3.0.5">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
 	<script async src="../assets/js/search.js" id="search-script"></script>
@@ -23,7 +23,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">@bothrs/util - v3.0.4</a>
+					<a href="../index.html" class="title">@bothrs/util - v3.0.5</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -52,7 +52,7 @@
 		<div class="container">
 			<ul class="tsd-breadcrumb">
 				<li>
-					<a href="../modules.html">@bothrs/util - v3.0.4</a>
+					<a href="../modules.html">@bothrs/util - v3.0.5</a>
 				</li>
 				<li>
 					<a href="fs.html">fs</a>
@@ -79,9 +79,9 @@
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="fs.html#readFile" class="tsd-kind-icon">read<wbr>File</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="fs.html#readJSON" class="tsd-kind-icon">readJSON</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="fs.html#writeFile" class="tsd-kind-icon">write<wbr>File</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="fs.html#readFileAsync" class="tsd-kind-icon">read<wbr>File<wbr>Async</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="fs.html#readJSON" class="tsd-kind-icon">readJSON</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="fs.html#writeFileAsync" class="tsd-kind-icon">write<wbr>File<wbr>Async</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="fs.html#writeJSON" class="tsd-kind-icon">writeJSON</a></li>
 							</ul>
 						</section>
@@ -91,80 +91,122 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="readFile" class="tsd-anchor"></a>
-					<h3>read<wbr>File</h3>
+					<a name="readFileAsync" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> read<wbr>File<wbr>Async</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">read<wbr>File<span class="tsd-signature-symbol">(</span>fileName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, type<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">read<wbr>File<wbr>Async<span class="tsd-signature-symbol">(</span>path<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">PathLike</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{ </span>encoding<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">; </span>flag<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">read<wbr>File<wbr>Async<span class="tsd-signature-symbol">(</span>path<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">PathLike</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span>, options<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>encoding<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">BufferEncoding</span><span class="tsd-signature-symbol">; </span>flag<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">read<wbr>File<wbr>Async<span class="tsd-signature-symbol">(</span>path<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">PathLike</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-type">BaseEncodingOptions</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-symbol">{ </span>flag<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bothrs/util/blob/d468993/src/fs.ts#L8">fs.ts:8</a></li>
+									<li>Defined in <a href="https://github.com/bothrs/util/blob/307fdd1/src/fs.ts#L9">src/fs.ts:9</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>fileName: <span class="tsd-signature-type">string</span></h5>
+									<h5>path: <span class="tsd-signature-type">PathLike</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
 								</li>
 								<li>
-									<h5>type: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &#x27;utf8&#x27;</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-symbol">{ </span>encoding<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">; </span>flag<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bothrs/util/blob/307fdd1/src/fs.ts#L9">src/fs.ts:9</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>path: <span class="tsd-signature-type">PathLike</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>options: <span class="tsd-signature-symbol">{ </span>encoding<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">BufferEncoding</span><span class="tsd-signature-symbol">; </span>flag<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/bothrs/util/blob/307fdd1/src/fs.ts#L9">src/fs.ts:9</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>path: <span class="tsd-signature-type">PathLike</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-symbol">(</span><span class="tsd-signature-type">BaseEncodingOptions</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-symbol">{ </span>flag<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
 					<a name="readJSON" class="tsd-anchor"></a>
 					<h3>readJSON</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">readJSON<span class="tsd-signature-symbol">(</span>fileName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">readJSON&lt;T&gt;<span class="tsd-signature-symbol">(</span>fileName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bothrs/util/blob/d468993/src/fs.ts#L24">fs.ts:24</a></li>
+									<li>Defined in <a href="https://github.com/bothrs/util/blob/307fdd1/src/fs.ts#L12">src/fs.ts:12</a></li>
 								</ul>
 							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T = <span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span></h4>
+								</li>
+							</ul>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>fileName: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="writeFile" class="tsd-anchor"></a>
-					<h3>write<wbr>File</h3>
+					<a name="writeFileAsync" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> write<wbr>File<wbr>Async</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">write<wbr>File<span class="tsd-signature-symbol">(</span>fileName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, type<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">write<wbr>File<wbr>Async<span class="tsd-signature-symbol">(</span>path<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">PathLike</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span>, data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">NodeJS.ArrayBufferView</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">WriteFileOptions</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bothrs/util/blob/d468993/src/fs.ts#L16">fs.ts:16</a></li>
+									<li>Defined in <a href="https://github.com/bothrs/util/blob/307fdd1/src/fs.ts#L10">src/fs.ts:10</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>fileName: <span class="tsd-signature-type">string</span></h5>
+									<h5>path: <span class="tsd-signature-type">PathLike</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
 								</li>
 								<li>
-									<h5>data: <span class="tsd-signature-type">string</span></h5>
+									<h5>data: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">NodeJS.ArrayBufferView</span></h5>
 								</li>
 								<li>
-									<h5>type: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &#x27;utf8&#x27;</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">WriteFileOptions</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -172,13 +214,13 @@
 					<a name="writeJSON" class="tsd-anchor"></a>
 					<h3>writeJSON</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">writeJSON<span class="tsd-signature-symbol">(</span>fileName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">writeJSON<span class="tsd-signature-symbol">(</span>fileName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bothrs/util/blob/d468993/src/fs.ts#L32">fs.ts:32</a></li>
+									<li>Defined in <a href="https://github.com/bothrs/util/blob/307fdd1/src/fs.ts#L18">src/fs.ts:18</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -190,7 +232,7 @@
 									<h5>data: <span class="tsd-signature-type">any</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -209,7 +251,13 @@
 						<a href="airtable_env.html">airtable-<wbr>env</a>
 					</li>
 					<li class=" tsd-kind-module">
+						<a href="array.html">array</a>
+					</li>
+					<li class=" tsd-kind-module">
 						<a href="async.html">async</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="calculate_distance.html">calculate-<wbr>distance</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="fetch.html">fetch</a>
@@ -219,6 +267,9 @@
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="hash.html">hash</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="index.html">index</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="jwt.html">jwt</a>
@@ -236,6 +287,9 @@
 						<a href="random.html">random</a>
 					</li>
 					<li class=" tsd-kind-module">
+						<a href="string.html">string</a>
+					</li>
+					<li class=" tsd-kind-module">
 						<a href="uniq.html">uniq</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -246,13 +300,13 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="fs.html#readFile" class="tsd-kind-icon">read<wbr>File</a>
+						<a href="fs.html#readFileAsync" class="tsd-kind-icon">read<wbr>File<wbr>Async</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module">
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="fs.html#readJSON" class="tsd-kind-icon">readJSON</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="fs.html#writeFile" class="tsd-kind-icon">write<wbr>File</a>
+						<a href="fs.html#writeFileAsync" class="tsd-kind-icon">write<wbr>File<wbr>Async</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="fs.html#writeJSON" class="tsd-kind-icon">writeJSON</a>
