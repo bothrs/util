@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "yarn clean && tsc -w --noEmit",
-    "clean": "find . -maxdepth 1 -type f \\( -name \\*.mjs -or -name \\*.js -or -name \\*.d.ts -or -name \\*.jsx \\) -delete; date",
+    "clean": "find . -maxdepth 1 -type f \\( -name \\*.mjs -or -name \\*.js -or -name \\*.d.ts -or -name \\*.jsx \\) ! -name jest.config.js -delete; date",
     "build": "yarn clean && tsc -d && cp src/mjs/*.mjs .",
     "docs": "typedoc --out docs src --includeVersion",
     "test": "jest --coverage --runInBand",
