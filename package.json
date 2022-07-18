@@ -8,7 +8,7 @@
     "clean": "find . -maxdepth 1 -type f \\( -name \\*.mjs -or -name \\*.js -or -name \\*.d.ts -or -name \\*.jsx \\) -delete; date",
     "build": "yarn clean && tsc -d && cp src/mjs/*.mjs .",
     "docs": "typedoc --out docs src --includeVersion",
-    "test": "jest --config=\"../../jest.config.js\" --roots=\"./packages/util/src\" --coverage --runInBand",
+    "test": "jest --coverage --runInBand",
     "fix": "yarn clean && prettier --write -l src",
     "lint": "yarn clean && prettier -l src"
   },
