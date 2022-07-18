@@ -7,18 +7,24 @@
  * @module
  */
 
-export function serialize(obj: any) {
-  const str: string[] = []
-  for (const p in obj) {
-    if (obj.hasOwnProperty(p) && obj[p]) {
-      str.push(encodeURIComponent(p) + '=' + encodeURIComponent(obj[p]))
+export function serialize(object: any) {
+  const string: string[] = []
+  for (const property in object) {
+    // eslint-disable-next-line no-prototype-builtins
+    if (object.hasOwnProperty(property) && object[property]) {
+      string.push(
+        encodeURIComponent(property) +
+          '=' +
+          encodeURIComponent(object[property])
+      )
     }
   }
-  return str.join('&')
+  return string.join('&')
 }
 
-export function unserialize(str: string) {
-  const query = str[0] === '#' || str[0] === '?' ? str.slice(1) : str
+export function unserialize(string_: string) {
+  const query =
+    string_[0] === '#' || string_[0] === '?' ? string_.slice(1) : string_
   const result: any = {}
   query.split('&').forEach(part => {
     const item = part.split('=')
@@ -88,7 +94,7 @@ export function isRelative(path: string) {
 }
 
 export function isUrl(url: string) {
-  return /^[a-zA-Z0-9+-.]+:\/\//.test(url)
+  return /^[\d+-.A-Za-z]+:\/\//.test(url)
 }
 
 // URL helper

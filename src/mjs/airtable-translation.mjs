@@ -1,7 +1,6 @@
-import fetch from 'node-fetch'
 import { selectAll } from './airtable-env.mjs'
-import { writeFile } from './fs.mjs'
 import { green } from './color.mjs'
+import { writeFile } from './fs.mjs'
 
 export async function syncTranslations(options = {}) {
   const table = options.table || 'Translations'

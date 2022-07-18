@@ -30,5 +30,5 @@ export function isPending<T>(promise: T) {
 export function to<T>(promise: PromiseLike<T> | T) {
   return Promise.resolve(promise)
     .then(data => [undefined, data] as [undefined, T])
-    .catch(err => [err, undefined] as [Error, undefined])
+    .catch(error => [error, undefined] as [Error, undefined])
 }
